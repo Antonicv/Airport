@@ -1,4 +1,4 @@
-ackage amb.AirportAppBackend.model;
+package com.example.AirportApp.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

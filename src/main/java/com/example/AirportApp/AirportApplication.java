@@ -1,4 +1,4 @@
-package com.example.Airport;
+package com.example.AirportApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

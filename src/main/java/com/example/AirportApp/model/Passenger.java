@@ -2,15 +2,15 @@ package com.example.AirportApp.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import java.util.List;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CrewMember {
+public class Passenger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,14 +23,17 @@ public class CrewMember {
     private String lastName;
 
     @Column(nullable = false, unique = true)
-    private String employeeId;
-
-    @Column(nullable = false)
-    private String position; // Pilot, Co-Pilot, Flight Attendant, etc.
+    private String passportNumber;
 
     @Column(nullable = false)
     private String nationality;
 
-    @ManyToMany(mappedBy = "crewMembers")
-    private List<Flight> assignedFlights;
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private String phoneNumber;
+
+    @OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL)
+    private List<Booking> bookings;
 }

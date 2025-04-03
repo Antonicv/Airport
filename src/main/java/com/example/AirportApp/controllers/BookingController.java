@@ -1,8 +1,7 @@
-package com.example.AirportApp.controllers;
+package com.example.AirportApp.controller;
 
 import com.example.AirportApp.model.Booking;
 import com.example.AirportApp.service.BookingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,13 +10,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/bookings")
 public class BookingController {
+    private final BookingService bookingService;
 
-    @Autowired
-    private BookingService bookingService;
+    public BookingController(BookingService bookingService) {
+        this.bookingService = bookingService;
+    }
 
     @GetMapping
-    public ResponseEntity<List<Booking>> getAllBookings() {
-        return ResponseEntity.ok(bookingService.findAll());
+    public List<Booking> getAllBookings() {
+        return bookingService.findAll();
     }
 
     @GetMapping("/{id}")
@@ -27,31 +28,19 @@ public class BookingController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/by-reference/{reference}")
-    public ResponseEntity<Booking> getBookingByReference(@PathVariable String reference) {
-        return bookingService.findByBookingReference(reference)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
-
-    @GetMapping("/by-passenger/{passengerId}")
-    public ResponseEntity<List<Booking>> getBookingsByPassenger(@PathVariable Long passengerId) {
-        return ResponseEntity.ok(bookingService.findByPassengerId(passengerId));
-    }
-
     @PostMapping
-    public ResponseEntity<Booking> createBooking(@RequestBody Booking booking) {
-        return ResponseEntity.ok(bookingService.save(booking));
+    public Booking createBooking(@RequestBody Booking booking) {
+        return bookingService.save(booking);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Booking> updateBooking(@PathVariable Long id, @RequestBody Booking bookingDetails) {
-        return ResponseEntity.ok(bookingService.update(id, bookingDetails));
+    public ResponseEntity<Booking> updateBooking(@PathVariable Long id, @RequestBody Booking booking) {
+        return ResponseEntity.ok(bookingService.update(id, booking));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBooking(@PathVariable Long id) {
-        bookingService.deleteById(id);
+        bookingService.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

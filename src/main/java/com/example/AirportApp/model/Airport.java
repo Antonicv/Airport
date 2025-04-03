@@ -1,79 +1,146 @@
 package com.example.AirportApp.model;
 
-import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+
+import java.util.ArrayList;
 import java.util.List;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "airports",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"code", "name"}))
 public class Airport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @NotBlank(message = "El código IATA es obligatorio")
+    @Size(min = 3, max = 3, message = "El código IATA debe tener exactamente 3 caracteres")
+    @Column(nullable = false, unique = true, length = 3)
+    private String code; // Código IATA (ej: BCN, MAD)
+
+    @NotBlank(message = "El nombre es obligatorio")
+    @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(nullable = false, unique = true, length = 3)
-    private String iataCode; // 3-letter IATA code (e.g., "JFK")
-
-    @Column(unique = true, length = 4)
-    private String icaoCode; // 4-letter ICAO code (e.g., "KJFK")
-
-    @Column(nullable = false)
+    @NotBlank(message = "La ciudad es obligatoria")
+    @Column(nullable = false, length = 50)
     private String city;
 
-    @Column(nullable = false)
+    @NotBlank(message = "El país es obligatorio")
+    @Column(nullable = false, length = 50)
     private String country;
 
-    @Column(nullable = false)
-    private String region;
+    // Relación con Vuelos de Salida
+    @OneToMany(mappedBy = "departureAirport",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH},
+            orphanRemoval = true)
+    private List<Flight> departingFlights = new ArrayList<>();
 
-    @Column(nullable = false)
-    private double latitude;
+    // Relación con Vuelos de Llegada
+    @OneToMany(mappedBy = "arrivalAirport",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH},
+            orphanRemoval = true)
+    private List<Flight> arrivingFlights = new ArrayList<>();
 
-    @Column(nullable = false)
-    private double longitude;
+    // Constructores
+    public Airport() {}
 
-    @Column
-    private int altitude; // in feet
+    public Airport(String code, String name, String city, String country) {
+        this.code = code.toUpperCase(); // Aseguramos mayúsculas para códigos IATA
+        this.name = name;
+        this.city = city;
+        this.country = country;
+    }
 
-    @Column
-    private String timezone; // e.g., "America/New_York"
+    // Métodos de gestión de relaciones
+    public void addDepartingFlight(Flight flight) {
+        departingFlights.add(flight);
+        flight.setDepartureAirport(this);
+    }
 
-    @Column
-    private String dst; // Daylight savings time rule (E, A, S, O, Z, N, U)
+    public void removeDepartingFlight(Flight flight) {
+        departingFlights.remove(flight);
+        flight.setDepartureAirport(null);
+    }
 
-    @Column(name = "tz_database_time_zone")
-    private String tzDatabaseTimeZone;
+    public void addArrivingFlight(Flight flight) {
+        arrivingFlights.add(flight);
+        flight.setArrivalAirport(this);
+    }
 
-    @OneToMany(mappedBy = "departureAirport", cascade = CascadeType.ALL)
-    private List<Flight> departingFlights;
+    public void removeArrivingFlight(Flight flight) {
+        arrivingFlights.remove(flight);
+        flight.setArrivalAirport(null);
+    }
 
-    @OneToMany(mappedBy = "arrivalAirport", cascade = CascadeType.ALL)
-    private List<Flight> arrivingFlights;
+    // Getters i Setters
+    public Long getId() {
+        return id;
+    }
 
-    // Additional useful fields for airport operations
-    @Column
-    private int numberOfGates;
+    public String getCode() {
+        return code;
+    }
 
-    @Column
-    private int numberOfTerminals;
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-    @Column
-    private boolean hasInternationalFlights;
+    public String getName() {
+        return name;
+    }
 
-    @Column
-    private String contactPhone;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    @Column
-    private String contactEmail;
+    public String getCity() {
+        return city;
+    }
 
-    @Column
-    private String website;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public List<Flight> getDepartingFlights() {
+        return departingFlights;
+    }
+
+    public List<Flight> getArrivingFlights() {
+        return arrivingFlights;
+    }
+
+    // Metode toString()
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Airport)) return false;
+        return id != null && id.equals(((Airport) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

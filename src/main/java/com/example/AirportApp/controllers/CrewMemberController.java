@@ -1,8 +1,7 @@
-package com.example.AirportApp.controllers;
+package com.example.AirportApp.controller;
 
 import com.example.AirportApp.model.CrewMember;
 import com.example.AirportApp.service.CrewMemberService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,13 +10,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/crew-members")
 public class CrewMemberController {
+    private final CrewMemberService crewMemberService;
 
-    @Autowired
-    private CrewMemberService crewMemberService;
+    public CrewMemberController(CrewMemberService crewMemberService) {
+        this.crewMemberService = crewMemberService;
+    }
 
     @GetMapping
-    public ResponseEntity<List<CrewMember>> getAllCrewMembers() {
-        return ResponseEntity.ok(crewMemberService.findAll());
+    public List<CrewMember> getAllCrewMembers() {
+        return crewMemberService.findAll();
     }
 
     @GetMapping("/{id}")
@@ -27,31 +28,24 @@ public class CrewMemberController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/by-employee-id/{employeeId}")
-    public ResponseEntity<CrewMember> getCrewMemberByEmployeeId(@PathVariable String employeeId) {
-        return crewMemberService.findByEmployeeId(employeeId)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    @GetMapping("/{id}/flights")
+    public ResponseEntity<List<Flight>> getCrewMemberFlights(@PathVariable Long id) {
+        return ResponseEntity.ok(crewMemberService.findFlightsByCrewMemberId(id));
     }
 
     @PostMapping
-    public ResponseEntity<CrewMember> createCrewMember(@RequestBody CrewMember crewMember) {
-        return ResponseEntity.ok(crewMemberService.save(crewMember));
+    public CrewMember createCrewMember(@RequestBody CrewMember crewMember) {
+        return crewMemberService.save(crewMember);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CrewMember> updateCrewMember(@PathVariable Long id, @RequestBody CrewMember crewMemberDetails) {
-        return ResponseEntity.ok(crewMemberService.update(id, crewMemberDetails));
+    public ResponseEntity<CrewMember> updateCrewMember(@PathVariable Long id, @RequestBody CrewMember crewMember) {
+        return ResponseEntity.ok(crewMemberService.update(id, crewMember));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCrewMember(@PathVariable Long id) {
-        crewMemberService.deleteById(id);
+        crewMemberService.delete(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @GetMapping("/by-flight/{flightId}")
-    public ResponseEntity<List<CrewMember>> getCrewMembersByFlight(@PathVariable Long flightId) {
-        return ResponseEntity.ok(crewMemberService.findByFlightId(flightId));
     }
 }

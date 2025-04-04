@@ -20,10 +20,10 @@ public class Airport {
     private String name;
 
     @Column(nullable = false, unique = true, length = 3)
-    private String iataCode; // 3-letter IATA code (e.g., "JFK")
+    private String iataCode;
 
     @Column(unique = true, length = 4)
-    private String icaoCode; // 4-letter ICAO code (e.g., "KJFK")
+    private String icaoCode;
 
     @Column(nullable = false)
     private String city;
@@ -41,24 +41,25 @@ public class Airport {
     private double longitude;
 
     @Column
-    private int altitude; // in feet
+    private int altitude;
 
     @Column
-    private String timezone; // e.g., "America/New_York"
+    private String timezone;
 
-    @Column
-    private String dst; // Daylight savings time rule (E, A, S, O, Z, N, U)
+    @Column(length = 1)
+    private char dst;
 
     @Column(name = "tz_database_time_zone")
     private String tzDatabaseTimeZone;
 
-    @OneToMany(mappedBy = "departureAirport", cascade = CascadeType.ALL)
+    // Relació OneToMany amb Flight (vols de sortida)
+    @OneToMany(mappedBy = "departureAirport", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Flight> departingFlights;
 
-    @OneToMany(mappedBy = "arrivalAirport", cascade = CascadeType.ALL)
+    // Relació OneToMany amb Flight (vols d'arribada)
+    @OneToMany(mappedBy = "arrivalAirport", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Flight> arrivingFlights;
 
-    // Additional useful fields for airport operations
     @Column
     private int numberOfGates;
 

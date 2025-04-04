@@ -1,4 +1,4 @@
-package com.example.AirportApp.repositories;
+package com.example.AirportApp.repository;
 
 import com.example.AirportApp.model.CrewMember;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,4 +16,6 @@ public interface CrewMemberRepository extends JpaRepository<CrewMember, Long> {
 
     @Query("SELECT c FROM CrewMember c WHERE c.position = 'PILOT' OR c.position = 'CO_PILOT'")
     List<CrewMember> findAllPilots();
+
+    List<CrewMember> findByAssignedFlightsId(Long flightId);
 }

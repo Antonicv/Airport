@@ -29,11 +29,12 @@ public class Plane {
     private int passengerCapacity;
 
     @Column(nullable = false)
-    private double maxRange; // in kilometers
+    private double maxRange;
 
     @Column(nullable = false)
-    private double cruisingSpeed; // in km/h
+    private double cruisingSpeed;
 
+    // Relació OneToMany amb Flight
     @OneToMany(mappedBy = "plane", cascade = CascadeType.ALL)
     private List<Flight> flights;
 }

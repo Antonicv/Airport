@@ -1,3 +1,4 @@
+// PassengerService.java
 package com.example.AirportApp.service;
 
 import com.example.AirportApp.model.Passenger;
@@ -8,6 +9,7 @@ public interface PassengerService {
     List<Passenger> findAll();
     Optional<Passenger> findById(Long id);
     Optional<Passenger> findByPassportNumber(String passportNumber);
+    Optional<Passenger> findByEmail(String email);
     Passenger save(Passenger passenger);
     Passenger update(Long id, Passenger passengerDetails);
     void deleteById(Long id);

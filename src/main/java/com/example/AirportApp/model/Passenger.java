@@ -34,6 +34,7 @@ public class Passenger {
     @Column(nullable = false)
     private String phoneNumber;
 
+    // Relació OneToMany amb Booking
     @OneToMany(mappedBy = "passenger", cascade = CascadeType.ALL)
     private List<Booking> bookings;
 }

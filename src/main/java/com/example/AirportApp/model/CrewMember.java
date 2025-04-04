@@ -26,11 +26,12 @@ public class CrewMember {
     private String employeeId;
 
     @Column(nullable = false)
-    private String position; // Pilot, Co-Pilot, Flight Attendant, etc.
+    private String position;
 
     @Column(nullable = false)
     private String nationality;
 
+    // Relació ManyToMany amb Flight
     @ManyToMany(mappedBy = "crewMembers")
     private List<Flight> assignedFlights;
 }

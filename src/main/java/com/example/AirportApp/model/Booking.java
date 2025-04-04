@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.time.LocalDateTime;
+import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -22,20 +23,28 @@ public class Booking {
     @Column(nullable = false)
     private LocalDateTime bookingDate;
 
-    @ManyToOne
+    // Relació ManyToOne amb Passenger
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "passenger_id", nullable = false)
     private Passenger passenger;
 
-    @ManyToOne
+    // Relació ManyToOne amb Flight
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "flight_id", nullable = false)
     private Flight flight;
 
     @Column(nullable = false)
     private int numberOfSeats;
 
-    @Column(nullable = false)
-    private double totalPrice;
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal totalPrice;
 
+    // Utilitzem enum per als estats de reserva
+    public enum BookingStatus {
+        CONFIRMED, CANCELLED, COMPLETED
+    }
+
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String status; // e.g., CONFIRMED, CANCELLED, COMPLETED
+    private BookingStatus status;
 }

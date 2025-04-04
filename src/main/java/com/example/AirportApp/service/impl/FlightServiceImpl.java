@@ -1,4 +1,3 @@
-// FlightServiceImpl.java
 package com.example.AirportApp.service.impl;
 
 import com.example.AirportApp.exception.AirportAppException;
@@ -8,12 +7,10 @@ import com.example.AirportApp.service.FlightService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
-@Service
-public abstract class FlightServiceImpl implements FlightService {
+@Service // Aquesta anotació és crucial
+public class FlightServiceImpl implements FlightService {
 
     private final FlightRepository flightRepository;
 
@@ -128,5 +125,21 @@ public abstract class FlightServiceImpl implements FlightService {
             throw new AirportAppException("Vol no trobat amb id: " + id);
         }
         flightRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Flight> findByAirportId(Long airportId) {
+        if (airportId == null) {
+            throw new AirportAppException("ID d'aeroport no pot ser null");
+        }
+
+        List<Flight> departures = flightRepository.findByDepartureAirportId(airportId);
+        List<Flight> arrivals = flightRepository.findByArrivalAirportId(airportId);
+
+        Set<Flight> combinedFlights = new HashSet<>(departures);
+        combinedFlights.addAll(arrivals);
+
+        return new ArrayList<>(combinedFlights);
     }
 }

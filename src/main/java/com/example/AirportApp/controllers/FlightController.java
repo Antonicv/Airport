@@ -11,9 +11,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/flights")
 public class FlightController {
+    private final FlightService flightService; // Nota: Es demana la interfície
 
     @Autowired
-    private FlightService flightService;
+    public FlightController(FlightService flightService) {
+        this.flightService = flightService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Flight>> getAllFlights() {

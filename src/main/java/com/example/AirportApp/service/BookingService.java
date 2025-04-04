@@ -1,3 +1,4 @@
+// BookingService.java
 package com.example.AirportApp.service;
 
 import com.example.AirportApp.model.Booking;
@@ -9,6 +10,7 @@ public interface BookingService {
     Optional<Booking> findById(Long id);
     Optional<Booking> findByBookingReference(String bookingReference);
     List<Booking> findByPassengerId(Long passengerId);
+    List<Booking> findByFlightId(Long flightId);
     Booking save(Booking booking);
     Booking update(Long id, Booking bookingDetails);
     void deleteById(Long id);

@@ -26,15 +26,18 @@ public class Flight {
     @Column(nullable = false)
     private LocalDateTime arrivalTime;
 
-    @ManyToOne
+    // Relació ManyToOne amb Airport (sortida)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "departure_airport_id", nullable = false)
     private Airport departureAirport;
 
-    @ManyToOne
+    // Relació ManyToOne amb Airport (arribada)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "arrival_airport_id", nullable = false)
     private Airport arrivalAirport;
 
-    @ManyToOne
+    // Relació ManyToOne amb Plane
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "plane_id", nullable = false)
     private Plane plane;
 
@@ -44,6 +47,7 @@ public class Flight {
     @Column(nullable = false)
     private int availableSeats;
 
+    // Relació ManyToMany amb CrewMember
     @ManyToMany
     @JoinTable(
             name = "flight_crew",

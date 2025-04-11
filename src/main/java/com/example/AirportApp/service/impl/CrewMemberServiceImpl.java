@@ -76,6 +76,29 @@ public class CrewMemberServiceImpl implements CrewMemberService {
 
     @Override
     @Transactional
+    public List<CrewMember> saveAll(List<CrewMember> crewMembers) {
+        if (crewMembers == null || crewMembers.isEmpty()) {
+            throw new AirportAppException("La lista de miembros de la tripulación no puede ser nula o vacía");
+        }
+        for (CrewMember crewMember : crewMembers) {
+            if (crewMember.getFirstName() == null || crewMember.getFirstName().isEmpty()) {
+                throw new AirportAppException("El nombre es obligatorio para cada miembro de la tripulación");
+            }
+            if (crewMember.getLastName() == null || crewMember.getLastName().isEmpty()) {
+                throw new AirportAppException("El apellido es obligatorio para cada miembro de la tripulación");
+            }
+            if (crewMember.getEmployeeId() == null || crewMember.getEmployeeId().isEmpty()) {
+                throw new AirportAppException("El ID de empleado es obligatorio para cada miembro de la tripulación");
+            }
+            if (crewMember.getPosition() == null || crewMember.getPosition().isEmpty()) {
+                throw new AirportAppException("La posición es obligatoria para cada miembro de la tripulación");
+            }
+        }
+        return crewMemberRepository.saveAll(crewMembers);
+    }
+
+    @Override
+    @Transactional
     public CrewMember update(Long id, CrewMember crewMemberDetails) {
         return crewMemberRepository.findById(id)
                 .map(crewMember -> {
@@ -97,6 +120,32 @@ public class CrewMemberServiceImpl implements CrewMemberService {
                     return crewMemberRepository.save(crewMember);
                 })
                 .orElseThrow(() -> new AirportAppException("Membre de tripulació no trobat amb id: " + id));
+    }
+
+    @Override
+    @Transactional
+    public List<CrewMember> updateAll(List<CrewMember> crewMembers) {
+        if (crewMembers == null || crewMembers.isEmpty()) {
+            throw new AirportAppException("La lista de miembros de la tripulación no puede ser nula o vacía");
+        }
+        for (CrewMember crewMember : crewMembers) {
+            if (crewMember.getId() == null || !crewMemberRepository.existsById(crewMember.getId())) {
+                throw new AirportAppException("No se encontró un miembro de la tripulación con el ID proporcionado: " + crewMember.getId());
+            }
+            if (crewMember.getFirstName() != null && crewMember.getFirstName().isEmpty()) {
+                throw new AirportAppException("El nombre no puede estar vacío");
+            }
+            if (crewMember.getLastName() != null && crewMember.getLastName().isEmpty()) {
+                throw new AirportAppException("El apellido no puede estar vacío");
+            }
+            if (crewMember.getEmployeeId() != null && crewMember.getEmployeeId().isEmpty()) {
+                throw new AirportAppException("El ID de empleado no puede estar vacío");
+            }
+            if (crewMember.getPosition() != null && crewMember.getPosition().isEmpty()) {
+                throw new AirportAppException("La posición no puede estar vacía");
+            }
+        }
+        return crewMemberRepository.saveAll(crewMembers); // `saveAll` actualiza si los IDs existen
     }
 
     @Override

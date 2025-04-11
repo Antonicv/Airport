@@ -1,21 +1,27 @@
 package com.example.AirportApp.service.impl;
 
-import com.example.AirportApp.exception.AirportAppException;
 import com.example.AirportApp.model.Flight;
 import com.example.AirportApp.repository.FlightRepository;
 import com.example.AirportApp.service.FlightService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
-@Service // Aquesta anotació és crucial
+@Service
+@Transactional
 public class FlightServiceImpl implements FlightService {
 
     private final FlightRepository flightRepository;
 
     public FlightServiceImpl(FlightRepository flightRepository) {
         this.flightRepository = flightRepository;
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<Flight> findByAirportId(Long airportId) {
+        return flightRepository.findByDepartureAirportId(airportId);
     }
 
     @Override
@@ -27,60 +33,31 @@ public class FlightServiceImpl implements FlightService {
     @Override
     @Transactional(readOnly = true)
     public Optional<Flight> findById(Long id) {
-        if (id == null) {
-            throw new AirportAppException("ID no pot ser null");
-        }
         return flightRepository.findById(id);
     }
 
     @Override
     @Transactional(readOnly = true)
     public Optional<Flight> findByFlightNumber(String flightNumber) {
-        if (flightNumber == null || flightNumber.isEmpty()) {
-            throw new AirportAppException("Número de vol no pot estar buit");
-        }
-        return flightRepository.findByFlightNumber(flightNumber.toUpperCase());
+        return flightRepository.findByFlightNumber(flightNumber);
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Flight> findByDepartureAirportId(Long airportId) {
-        if (airportId == null) {
-            throw new AirportAppException("ID d'aeroport no pot ser null");
-        }
         return flightRepository.findByDepartureAirportId(airportId);
     }
 
     @Override
     @Transactional(readOnly = true)
     public List<Flight> findByArrivalAirportId(Long airportId) {
-        if (airportId == null) {
-            throw new AirportAppException("ID d'aeroport no pot ser null");
-        }
         return flightRepository.findByArrivalAirportId(airportId);
     }
 
     @Override
     @Transactional
     public Flight save(Flight flight) {
-        if (flight == null) {
-            throw new AirportAppException("El vol no pot ser null");
-        }
-        if (flight.getFlightNumber() == null || flight.getFlightNumber().isEmpty()) {
-            throw new AirportAppException("El número de vol és obligatori");
-        }
-        if (flight.getDepartureTime() == null || flight.getArrivalTime() == null) {
-            throw new AirportAppException("Les hores de sortida i arribada són obligatòries");
-        }
-        if (flight.getDepartureTime().isAfter(flight.getArrivalTime())) {
-            throw new AirportAppException("L'hora de sortida no pot ser posterior a l'hora d'arribada");
-        }
-        if (flight.getDepartureAirport() == null || flight.getArrivalAirport() == null) {
-            throw new AirportAppException("Els aeroports de sortida i arribada són obligatoris");
-        }
-        if (flight.getDepartureAirport().equals(flight.getArrivalAirport())) {
-            throw new AirportAppException("L'aeroport de sortida i arribada no poden ser el mateix");
-        }
+        validateFlight(flight);
         return flightRepository.save(flight);
     }
 
@@ -88,58 +65,82 @@ public class FlightServiceImpl implements FlightService {
     @Transactional
     public Flight update(Long id, Flight flightDetails) {
         return flightRepository.findById(id)
-                .map(flight -> {
-                    if (flightDetails.getFlightNumber() != null) {
-                        flight.setFlightNumber(flightDetails.getFlightNumber());
-                    }
-                    if (flightDetails.getDepartureTime() != null) {
-                        flight.setDepartureTime(flightDetails.getDepartureTime());
-                    }
-                    if (flightDetails.getArrivalTime() != null) {
-                        flight.setArrivalTime(flightDetails.getArrivalTime());
-                    }
-                    if (flightDetails.getDepartureAirport() != null) {
-                        flight.setDepartureAirport(flightDetails.getDepartureAirport());
-                    }
-                    if (flightDetails.getArrivalAirport() != null) {
-                        flight.setArrivalAirport(flightDetails.getArrivalAirport());
-                    }
-                    if (flightDetails.getPlane() != null) {
-                        flight.setPlane(flightDetails.getPlane());
-                    }
-                    if (flightDetails.getTicketPrice() > 0) {
-                        flight.setTicketPrice(flightDetails.getTicketPrice());
-                    }
-                    if (flightDetails.getAvailableSeats() >= 0) {
-                        flight.setAvailableSeats(flightDetails.getAvailableSeats());
-                    }
-                    return flightRepository.save(flight);
+                .map(existingFlight -> {
+                    existingFlight.setFlightNumber(flightDetails.getFlightNumber());
+                    existingFlight.setDepartureTime(flightDetails.getDepartureTime());
+                    existingFlight.setArrivalTime(flightDetails.getArrivalTime());
+                    existingFlight.setDepartureAirport(flightDetails.getDepartureAirport());
+                    existingFlight.setArrivalAirport(flightDetails.getArrivalAirport());
+                    existingFlight.setPlane(flightDetails.getPlane());
+                    existingFlight.setTicketPrice(flightDetails.getTicketPrice());
+                    existingFlight.setAvailableSeats(flightDetails.getAvailableSeats());
+                    validateFlight(existingFlight);
+                    return flightRepository.save(existingFlight);
                 })
-                .orElseThrow(() -> new AirportAppException("Vol no trobat amb id: " + id));
+                .orElseThrow(() -> new RuntimeException("Flight not found with id: " + id));
     }
 
     @Override
     @Transactional
     public void deleteById(Long id) {
-        if (!flightRepository.existsById(id)) {
-            throw new AirportAppException("Vol no trobat amb id: " + id);
-        }
         flightRepository.deleteById(id);
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public List<Flight> findByAirportId(Long airportId) {
-        if (airportId == null) {
-            throw new AirportAppException("ID d'aeroport no pot ser null");
+    @Transactional
+    public List<Flight> saveAll(List<Flight> flights) {
+        flights.forEach(this::validateFlight);
+        return flightRepository.saveAll(flights);
+    }
+
+    @Override
+    @Transactional
+    public List<Flight> updateAll(List<Flight> flights) {
+        return flights.stream()
+                .map(flight -> {
+                    if (flight.getId() != null) {
+                        return update(flight.getId(), flight);
+                    }
+                    return save(flight);
+                })
+                .toList();
+    }
+
+    private void validateFlight(Flight flight) {
+        if (flight.getFlightNumber() == null || flight.getFlightNumber().isBlank()) {
+            throw new IllegalArgumentException("Flight number cannot be empty");
         }
-
-        List<Flight> departures = flightRepository.findByDepartureAirportId(airportId);
-        List<Flight> arrivals = flightRepository.findByArrivalAirportId(airportId);
-
-        Set<Flight> combinedFlights = new HashSet<>(departures);
-        combinedFlights.addAll(arrivals);
-
-        return new ArrayList<>(combinedFlights);
+        
+        if (flight.getDepartureTime() == null) {
+            throw new IllegalArgumentException("Departure time cannot be null");
+        }
+        
+        if (flight.getArrivalTime() == null) {
+            throw new IllegalArgumentException("Arrival time cannot be null");
+        }
+        
+        if (flight.getDepartureTime().isAfter(flight.getArrivalTime())) {
+            throw new IllegalArgumentException("Arrival time must be after departure time");
+        }
+        
+        if (flight.getDepartureAirport() == null) {
+            throw new IllegalArgumentException("Departure airport cannot be null");
+        }
+        
+        if (flight.getArrivalAirport() == null) {
+            throw new IllegalArgumentException("Arrival airport cannot be null");
+        }
+        
+        if (flight.getPlane() == null) {
+            throw new IllegalArgumentException("Plane cannot be null");
+        }
+        
+        if (flight.getAvailableSeats() < 0) {
+            throw new IllegalArgumentException("Available seats cannot be negative");
+        }
+        
+        if (flight.getTicketPrice() <= 0) {
+            throw new IllegalArgumentException("Ticket price must be positive");
+        }
     }
 }

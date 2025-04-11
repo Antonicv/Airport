@@ -1,4 +1,3 @@
-// FlightService.java
 package com.example.AirportApp.service;
 
 import com.example.AirportApp.model.Flight;
@@ -15,4 +14,6 @@ public interface FlightService {
     Flight update(Long id, Flight flightDetails);
     void deleteById(Long id);
     List<Flight> findByAirportId(Long airportId);
+    List<Flight> saveAll(List<Flight> flight);
+    List<Flight> updateAll(List<Flight> flight);
 }

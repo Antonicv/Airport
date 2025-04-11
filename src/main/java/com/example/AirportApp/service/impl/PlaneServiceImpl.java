@@ -73,6 +73,35 @@ public class PlaneServiceImpl implements PlaneService {
 
     @Override
     @Transactional
+    public List<Plane> saveAll(List<Plane> planes) {
+        if (planes == null || planes.isEmpty()) {
+            throw new AirportAppException("La lista de aviones no puede ser nula o vacía");
+        }
+        for (Plane plane : planes) {
+            if (plane.getRegistrationNumber() == null || plane.getRegistrationNumber().isEmpty()) {
+                throw new AirportAppException("El número de registro es obligatorio para cada avión");
+            }
+            if (plane.getModel() == null || plane.getModel().isEmpty()) {
+                throw new AirportAppException("El modelo es obligatorio para cada avión");
+            }
+            if (plane.getManufacturer() == null || plane.getManufacturer().isEmpty()) {
+                throw new AirportAppException("El fabricante es obligatorio para cada avión");
+            }
+            if (plane.getPassengerCapacity() <= 0) {
+                throw new AirportAppException("La capacidad de pasajeros debe ser mayor que cero");
+            }
+            if (plane.getMaxRange() <= 0) {
+                throw new AirportAppException("El alcance máximo debe ser mayor que cero");
+            }
+            if (plane.getCruisingSpeed() <= 0) {
+                throw new AirportAppException("La velocidad de crucero debe ser mayor que cero");
+            }
+        }
+        return planeRepository.saveAll(planes);
+    }
+
+    @Override
+    @Transactional
     public Plane update(Long id, Plane planeDetails) {
         return planeRepository.findById(id)
                 .map(plane -> {
@@ -85,15 +114,7 @@ public class PlaneServiceImpl implements PlaneService {
                     if (planeDetails.getManufacturer() != null && !planeDetails.getManufacturer().isEmpty()) {
                         plane.setManufacturer(planeDetails.getManufacturer());
                     }
-                    if (planeDetails.getPassengerCapacity() > 0) {
-                        plane.setPassengerCapacity(planeDetails.getPassengerCapacity());
-                    }
-                    if (planeDetails.getMaxRange() > 0) {
-                        plane.setMaxRange(planeDetails.getMaxRange());
-                    }
-                    if (planeDetails.getCruisingSpeed() > 0) {
-                        plane.setCruisingSpeed(planeDetails.getCruisingSpeed());
-                    }
+                   
                     return planeRepository.save(plane);
                 })
                 .orElseThrow(() -> new AirportAppException("Avió no trobat amb id: " + id));
@@ -101,7 +122,34 @@ public class PlaneServiceImpl implements PlaneService {
 
     @Override
     @Transactional
+    public List<Plane> updateAll(List<Plane> planes) {
+        if (planes == null || planes.isEmpty()) {
+            throw new AirportAppException("La lista de aviones no puede ser nula o vacía");
+        }
+        for (Plane plane : planes) {
+            if (plane.getId() == null || !planeRepository.existsById(plane.getId())) {
+                throw new AirportAppException("No se encontró un avión con el ID proporcionado: " + plane.getId());
+            }
+            if (plane.getRegistrationNumber() != null && plane.getRegistrationNumber().isEmpty()) {
+                throw new AirportAppException("El número de registro no puede estar vacío");
+            }
+            if (plane.getModel() != null && plane.getModel().isEmpty()) {
+                throw new AirportAppException("El modelo no puede estar vacío");
+            }
+            if (plane.getManufacturer() != null && plane.getManufacturer().isEmpty()) {
+                throw new AirportAppException("El fabricante no puede estar vacío");
+            }
+           
+        }
+        return planeRepository.saveAll(planes);
+    }
+
+    @Override
+    @Transactional
     public void deleteById(Long id) {
+        if (id == null) {
+            throw new AirportAppException("L'ID no pot ser null");
+        }
         if (!planeRepository.existsById(id)) {
             throw new AirportAppException("Avió no trobat amb id: " + id);
         }

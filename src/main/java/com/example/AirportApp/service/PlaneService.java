@@ -10,6 +10,8 @@ public interface PlaneService {
     Optional<Plane> findById(Long id);
     Optional<Plane> findByRegistrationNumber(String registrationNumber);
     Plane save(Plane plane);
+    List<Plane> saveAll(List<Plane> planes);
     Plane update(Long id, Plane planeDetails);
+    List<Plane> updateAll(List<Plane> planes);
     void deleteById(Long id);
 }

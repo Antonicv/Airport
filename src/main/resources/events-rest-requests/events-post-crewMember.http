@@ -1,0 +1,245 @@
+POST https://localhost:8081/crewMember/batch
+Content-Type: application/json
+
+[
+  {
+    
+    "EMPLOYEE_ID": "FLT001",
+    "FIRST_NAME": "Isabella",
+    "LAST_NAME": "Rossi",
+    "NATIONALITY": "Italian",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 2,
+    "EMPLOYEE_ID": "FLT002",
+    "FIRST_NAME": "Kenji",
+    "LAST_NAME": "Tanaka",
+    "NATIONALITY": "Japanese",
+    "POSITION": "First Officer"
+  },
+  {
+    "ID": 3,
+    "EMPLOYEE_ID": "FLT003",
+    "FIRST_NAME": "Aisha",
+    "LAST_NAME": "Khan",
+    "NATIONALITY": "Pakistani",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 4,
+    "EMPLOYEE_ID": "FLT004",
+    "FIRST_NAME": "Mateo",
+    "LAST_NAME": "Fernández",
+    "NATIONALITY": "Spanish",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 5,
+    "EMPLOYEE_ID": "FLT005",
+    "FIRST_NAME": "Chloe",
+    "LAST_NAME": "Dubois",
+    "NATIONALITY": "French",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 6,
+    "EMPLOYEE_ID": "FLT006",
+    "FIRST_NAME": "Pavel",
+    "LAST_NAME": "Novak",
+    "NATIONALITY": "Czech",
+    "POSITION": "First Officer"
+  },
+  {
+    "ID": 7,
+    "EMPLOYEE_ID": "FLT007",
+    "FIRST_NAME": "Sofia",
+    "LAST_NAME": "Santos",
+    "NATIONALITY": "Brazilian",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 8,
+    "EMPLOYEE_ID": "FLT008",
+    "FIRST_NAME": "Omar",
+    "LAST_NAME": "Hassan",
+    "NATIONALITY": "Egyptian",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 9,
+    "EMPLOYEE_ID": "FLT009",
+    "FIRST_NAME": "Lin",
+    "LAST_NAME": "Wei",
+    "NATIONALITY": "Chinese",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 10,
+    "EMPLOYEE_ID": "FLT010",
+    "FIRST_NAME": "Viktor",
+    "LAST_NAME": "Schmidt",
+    "NATIONALITY": "German",
+    "POSITION": "First Officer"
+  },
+  {
+    "ID": 11,
+    "EMPLOYEE_ID": "FLT011",
+    "FIRST_NAME": "Priya",
+    "LAST_NAME": "Patel",
+    "NATIONALITY": "Indian",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 12,
+    "EMPLOYEE_ID": "FLT012",
+    "FIRST_NAME": "Anders",
+    "LAST_NAME": "Johansson",
+    "NATIONALITY": "Swedish",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 13,
+    "EMPLOYEE_ID": "FLT013",
+    "FIRST_NAME": "Nadia",
+    "LAST_NAME": "Volkova",
+    "NATIONALITY": "Russian",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 14,
+    "EMPLOYEE_ID": "FLT014",
+    "FIRST_NAME": "Seong-min",
+    "LAST_NAME": "Kim",
+    "NATIONALITY": "South Korean",
+    "POSITION": "First Officer"
+  },
+  {
+    "ID": 15,
+    "EMPLOYEE_ID": "FLT015",
+    "FIRST_NAME": "Layla",
+    "LAST_NAME": "Al-Farsi",
+    "NATIONALITY": "Omani",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 16,
+    "EMPLOYEE_ID": "FLT016",
+    "FIRST_NAME": "Ricardo",
+    "LAST_NAME": "Silva",
+    "NATIONALITY": "Portuguese",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 17,
+    "EMPLOYEE_ID": "FLT017",
+    "FIRST_NAME": "Astrid",
+    "LAST_NAME": "Jensen",
+    "NATIONALITY": "Norwegian",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 18,
+    "EMPLOYEE_ID": "FLT018",
+    "FIRST_NAME": "Jan",
+    "LAST_NAME": "Kowalski",
+    "NATIONALITY": "Polish",
+    "POSITION": "First Officer"
+  },
+  {
+    "ID": 19,
+    "EMPLOYEE_ID": "FLT019",
+    "FIRST_NAME": "Fatima",
+    "LAST_NAME": "Demir",
+    "NATIONALITY": "Turkish",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 20,
+    "EMPLOYEE_ID": "FLT020",
+    "FIRST_NAME": "Ben",
+    "LAST_NAME": "Miller",
+    "NATIONALITY": "British",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 21,
+    "EMPLOYEE_ID": "FLT021",
+    "FIRST_NAME": "Elena",
+    "LAST_NAME": "Georgiou",
+    "NATIONALITY": "Greek",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 22,
+    "EMPLOYEE_ID": "FLT022",
+    "FIRST_NAME": "Nguyen",
+    "LAST_NAME": "Thi Ha",
+    "NATIONALITY": "Vietnamese",
+    "POSITION": "First Officer"
+  },
+  {
+    "ID": 23,
+    "EMPLOYEE_ID": "FLT023",
+    "FIRST_NAME": "Sara",
+    "LAST_NAME": "Dupont",
+    "NATIONALITY": "Belgian",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 24,
+    "EMPLOYEE_ID": "FLT024",
+    "FIRST_NAME": "Mikael",
+    "LAST_NAME": "Koskinen",
+    "NATIONALITY": "Finnish",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 25,
+    "EMPLOYEE_ID": "FLT025",
+    "FIRST_NAME": "Javier",
+    "LAST_NAME": "Vargas",
+    "NATIONALITY": "Mexican",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 26,
+    "EMPLOYEE_ID": "FLT026",
+    "FIRST_NAME": "Anna",
+    "LAST_NAME": "Kozlova",
+    "NATIONALITY": "Ukrainian",
+    "POSITION": "First Officer"
+  },
+  {
+    "ID": 27,
+    "EMPLOYEE_ID": "FLT027",
+    "FIRST_NAME": "Samira",
+    "LAST_NAME": "Ali",
+    "NATIONALITY": "Lebanese",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 28,
+    "EMPLOYEE_ID": "FLT028",
+    "FIRST_NAME": "Daniel",
+    "LAST_NAME": "Popescu",
+    "NATIONALITY": "Romanian",
+    "POSITION": "Flight Attendant"
+  },
+  {
+    "ID": 29,
+    "EMPLOYEE_ID": "FLT029",
+    "FIRST_NAME": "Ingrid",
+    "LAST_NAME": "Van Dijk",
+    "NATIONALITY": "Dutch",
+    "POSITION": "Captain"
+  },
+  {
+    "ID": 30,
+    "EMPLOYEE_ID": "FLT030",
+    "FIRST_NAME": "Takahiro",
+    "LAST_NAME": "Yamamoto",
+    "NATIONALITY": "Japanese",
+    "POSITION": "First Officer"
+  }
+]

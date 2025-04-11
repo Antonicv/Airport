@@ -5,9 +5,6 @@ import com.example.AirportApp.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -57,4 +54,14 @@ public class BookingController {
         bookingService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/batch")
+public ResponseEntity<List<Booking>> createBookingsBatch(@RequestBody List<Booking> bookings) {
+    return ResponseEntity.ok(bookingService.saveAll(bookings));
+}
+
+@PutMapping("/batch")
+public ResponseEntity<List<Booking>> updateBookingsBatch(@RequestBody List<Booking> bookings) {
+    return ResponseEntity.ok(bookingService.updateAll(bookings));
+}
 }

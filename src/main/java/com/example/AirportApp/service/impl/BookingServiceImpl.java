@@ -90,6 +90,32 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     @Transactional
+    public List<Booking> saveAll(List<Booking> bookings) {
+        if (bookings == null || bookings.isEmpty()) {
+            throw new AirportAppException("La lista de reservas no puede ser nula o vacía");
+        }
+        for (Booking booking : bookings) {
+            if (booking.getPassenger() == null) {
+                throw new AirportAppException("El pasajero es obligatorio en cada reserva");
+            }
+            if (booking.getFlight() == null) {
+                throw new AirportAppException("El vuelo es obligatorio en cada reserva");
+            }
+            if (booking.getNumberOfSeats() <= 0) {
+                throw new AirportAppException("El número de asientos debe ser mayor que cero");
+            }
+            if (booking.getTotalPrice() == null || booking.getTotalPrice().compareTo(BigDecimal.ZERO) <= 0) {
+                throw new AirportAppException("El precio total debe ser mayor que cero");
+            }
+            if (booking.getStatus() == null) {
+                booking.setStatus(BookingStatus.CONFIRMED);
+            }
+        }
+        return bookingRepository.saveAll(bookings);
+    }
+
+    @Override
+    @Transactional
     public Booking update(Long id, Booking bookingDetails) {
         return bookingRepository.findById(id)
                 .map(booking -> {
@@ -106,6 +132,26 @@ public class BookingServiceImpl implements BookingService {
                     return bookingRepository.save(booking);
                 })
                 .orElseThrow(() -> new AirportAppException("Reserva no trobada amb id: " + id));
+    }
+
+    @Override
+    @Transactional
+    public List<Booking> updateAll(List<Booking> bookings) {
+        if (bookings == null || bookings.isEmpty()) {
+            throw new AirportAppException("La lista de reservas no puede ser nula o vacía");
+        }
+        for (Booking booking : bookings) {
+            if (booking.getId() == null || !bookingRepository.existsById(booking.getId())) {
+                throw new AirportAppException("No se encontró una reserva con el ID proporcionado: " + booking.getId());
+            }
+            if (booking.getNumberOfSeats() <= 0) {
+                throw new AirportAppException("El número de asientos debe ser mayor que cero");
+            }
+            if (booking.getTotalPrice() != null && booking.getTotalPrice().compareTo(BigDecimal.ZERO) <= 0) {
+                throw new AirportAppException("El precio total debe ser mayor que cero");
+            }
+        }
+        return bookingRepository.saveAll(bookings); // `saveAll` actualiza si los IDs existen
     }
 
     @Override

@@ -50,14 +50,28 @@ public class FlightController {
         return ResponseEntity.ok(flightService.save(flight));
     }
 
+    @PostMapping("/batch")
+    public ResponseEntity<List<Flight>> createFlightsBatch(@RequestBody List<Flight> flights) {
+        return ResponseEntity.ok(flightService.saveAll(flights));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Flight> updateFlight(@PathVariable Long id, @RequestBody Flight flightDetails) {
         return ResponseEntity.ok(flightService.update(id, flightDetails));
     }
 
+    @PutMapping("/batch")
+    public ResponseEntity<List<Flight>> updateFlightsBatch(@RequestBody List<Flight> flights) {
+        return ResponseEntity.ok(flightService.updateAll(flights));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFlight(@PathVariable Long id) {
-        flightService.deleteById(id);
-        return ResponseEntity.noContent().build();
+        if (flightService.findById(id).isPresent()) {
+            flightService.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

@@ -1,0 +1,254 @@
+POST http://localhost:8081/passenger/batch
+Content-Type: application/json
+
+
+[
+  {
+    "email": "linus.torvalds@kernel.org",
+    "first_name": "Linus",
+    "last_name": "Torvalds",
+    "nationality": "Finland",
+    "passport_number": "LINUX123",
+    "phone_number": "+358501234567"
+  },
+  {
+    "email": "ada.lovelace@algorithm.com",
+    "first_name": "Ada",
+    "last_name": "Lovelace",
+    "nationality": "United Kingdom",
+    "passport_number": "ADA1843",
+    "phone_number": "+442079876543"
+  },
+  {
+    "email": "alan.turing@enigma.uk",
+    "first_name": "Alan",
+    "last_name": "Turing",
+    "nationality": "United Kingdom",
+    "passport_number": "TURING42",
+    "phone_number": "+442089876543"
+  },
+  {
+    "email": "grace.hopper@navy.mil",
+    "first_name": "Grace",
+    "last_name": "Hopper",
+    "nationality": "United States",
+    "passport_number": "COBOL56",
+    "phone_number": "+12025551234"
+  },
+  {
+    "email": "tim.berners@web.org",
+    "first_name": "Tim",
+    "last_name": "Berners-Lee",
+    "nationality": "United Kingdom",
+    "passport_number": "HTML1989",
+    "phone_number": "+442078765432"
+  },
+  {
+    "email": "python.monty@script.com",
+    "first_name": "Python",
+    "last_name": "Monty",
+    "nationality": "Netherlands",
+    "passport_number": "PYTHON91",
+    "phone_number": "+31612345678"
+  },
+  {
+    "email": "java.coffee@oracle.com",
+    "first_name": "Java",
+    "last_name": "Coffee",
+    "nationality": "United States",
+    "passport_number": "JAVA1995",
+    "phone_number": "+16505551234"
+  },
+  {
+    "email": "ruby.rails@web.dev",
+    "first_name": "Ruby",
+    "last_name": "Rails",
+    "nationality": "Japan",
+    "passport_number": "RUBY2005",
+    "phone_number": "+81312345678"
+  },
+  {
+    "email": "javascript.es6@web.io",
+    "first_name": "Java",
+    "last_name": "Script",
+    "nationality": "United States",
+    "passport_number": "JS1995",
+    "phone_number": "+12125551234"
+  },
+  {
+    "email": "c.sharp@microsoft.com",
+    "first_name": "C",
+    "last_name": "Sharp",
+    "nationality": "United States",
+    "passport_number": "CSHARP00",
+    "phone_number": "+12035551234"
+  },
+  {
+    "email": "react.component@ui.dev",
+    "first_name": "React",
+    "last_name": "Component",
+    "nationality": "United States",
+    "passport_number": "REACT2013",
+    "phone_number": "+12135551234"
+  },
+  {
+    "email": "vue.js@frontend.io",
+    "first_name": "Vue",
+    "last_name": "DotJS",
+    "nationality": "China",
+    "passport_number": "VUE2014",
+    "phone_number": "+8613812345678"
+  },
+  {
+    "email": "angular.module@google.com",
+    "first_name": "Angular",
+    "last_name": "Module",
+    "nationality": "United States",
+    "passport_number": "NG2010",
+    "phone_number": "+16505554321"
+  },
+  {
+    "email": "django.mvc@python.org",
+    "first_name": "Django",
+    "last_name": "MVC",
+    "nationality": "United States",
+    "passport_number": "DJANGO05",
+    "phone_number": "+12045551234"
+  },
+  {
+    "email": "laravel.eloquent@php.net",
+    "first_name": "Laravel",
+    "last_name": "Eloquent",
+    "nationality": "United Kingdom",
+    "passport_number": "LARA2011",
+    "phone_number": "+447912345678"
+  },
+  {
+    "email": "null.pointer@exception.io",
+    "first_name": "Null",
+    "last_name": "Pointer",
+    "nationality": "Germany",
+    "passport_number": "SEGFAULT",
+    "phone_number": "+4915112345678"
+  },
+  {
+    "email": "stack.overflow@qna.dev",
+    "first_name": "Stack",
+    "last_name": "Overflow",
+    "nationality": "United States",
+    "passport_number": "STACKERR",
+    "phone_number": "+12145551234"
+  },
+  {
+    "email": "git.commit@version.ctl",
+    "first_name": "Git",
+    "last_name": "Commit",
+    "nationality": "United States",
+    "passport_number": "GIT2005",
+    "phone_number": "+12155551234"
+  },
+  {
+    "email": "binary.tree@data.struct",
+    "first_name": "Binary",
+    "last_name": "Tree",
+    "nationality": "United Kingdom",
+    "passport_number": "BINARY11",
+    "phone_number": "+447700123456"
+  },
+  {
+    "email": "fibonacci.seq@math.pro",
+    "first_name": "Fibonacci",
+    "last_name": "Sequence",
+    "nationality": "Italy",
+    "passport_number": "FIB11235",
+    "phone_number": "+393331234567"
+  },
+  {
+    "email": "bug.2000@y2k.com",
+    "first_name": "Bug",
+    "last_name": "Y2K",
+    "nationality": "United States",
+    "passport_number": "Y2K2000",
+    "phone_number": "+18005551234"
+  },
+  {
+    "email": "heisen.bug@quantum.dev",
+    "first_name": "Heisen",
+    "last_name": "Bug",
+    "nationality": "Germany",
+    "passport_number": "UNCERTN",
+    "phone_number": "+4915212345678"
+  },
+  {
+    "email": "off.byone@index.err",
+    "first_name": "Off",
+    "last_name": "Byone",
+    "nationality": "United States",
+    "passport_number": "OBOERROR",
+    "phone_number": "+12065551234"
+  },
+  {
+    "email": "infinite.loop@recursion.io",
+    "first_name": "Infinite",
+    "last_name": "Loop",
+    "nationality": "Japan",
+    "passport_number": "STACKOVR",
+    "phone_number": "+81387654321"
+  },
+  {
+    "email": "syntax.error@parser.com",
+    "first_name": "Syntax",
+    "last_name": "Error",
+    "nationality": "United States",
+    "passport_number": "SYNTAX99",
+    "phone_number": "+12165551234"
+  },
+  {
+    "email": "cpu.thread@processor.com",
+    "first_name": "CPU",
+    "last_name": "Thread",
+    "nationality": "United States",
+    "passport_number": "CPU1971",
+    "phone_number": "+14085551234"
+  },
+  {
+    "email": "gpu.render@nvidia.com",
+    "first_name": "GPU",
+    "last_name": "Render",
+    "nationality": "United States",
+    "passport_number": "GPU1999",
+    "phone_number": "+18505551234"
+  },
+  {
+    "email": "ssd.flash@storage.io",
+    "first_name": "SSD",
+    "last_name": "Flash",
+    "nationality": "South Korea",
+    "passport_number": "SSD2008",
+    "phone_number": "+82212345678"
+  },
+  {
+    "email": "led.matrix@display.tech",
+    "first_name": "LED",
+    "last_name": "Matrix",
+    "nationality": "Japan",
+    "passport_number": "LED1962",
+    "phone_number": "+81376543210"
+  },
+  {
+    "email": "raspberry.pi@iot.org",
+    "first_name": "Raspberry",
+    "last_name": "Pi",
+    "nationality": "United Kingdom",
+    "passport_number": "RPI2012",
+    "phone_number": "+447500123456"
+  },
+  {
+    "email": "TESTICULAR@gmail.com",
+    "first_name": "testiLOS",
+    "last_name": "cul",
+    "nationality": "argentina",
+    "passport_number": "QUEMIRABOB0",
+    "phone_number": "674445485"
+  }
+]

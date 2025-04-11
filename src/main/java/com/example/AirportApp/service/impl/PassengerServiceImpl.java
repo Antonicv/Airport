@@ -121,4 +121,47 @@ public class PassengerServiceImpl implements PassengerService {
         }
         passengerRepository.deleteById(id);
     }
+
+    @Override
+    @Transactional
+    public List<Passenger> saveAll(List<Passenger> passengers) {
+        if (passengers == null || passengers.isEmpty()) {
+            throw new AirportAppException("La lista de pasajeros no puede ser nula o vacía");
+        }
+        for (Passenger passenger : passengers) {
+            if (passenger.getFirstName() == null || passenger.getFirstName().isEmpty()) {
+                throw new AirportAppException("El nombre es obligatorio para cada pasajero");
+            }
+            if (passenger.getLastName() == null || passenger.getLastName().isEmpty()) {
+                throw new AirportAppException("El apellido es obligatorio para cada pasajero");
+            }
+            if (passenger.getPassportNumber() == null || passenger.getPassportNumber().isEmpty()) {
+                throw new AirportAppException("El número de pasaporte es obligatorio para cada pasajero");
+            }
+            if (passenger.getEmail() == null || passenger.getEmail().isEmpty()) {
+                throw new AirportAppException("El email es obligatorio para cada pasajero");
+            }
+            if (!EMAIL_PATTERN.matcher(passenger.getEmail()).matches()) {
+                throw new AirportAppException("Formato de email inválido para el pasajero");
+            }
+        }
+        return passengerRepository.saveAll(passengers);
+    }
+
+    @Override
+    @Transactional
+    public List<Passenger> updateAll(List<Passenger> passengers) {
+        if (passengers == null || passengers.isEmpty()) {
+            throw new AirportAppException("La lista de pasajeros no puede ser nula o vacía");
+        }
+        for (Passenger passenger : passengers) {
+            if (passenger.getId() == null || !passengerRepository.existsById(passenger.getId())) {
+                throw new AirportAppException("No se encontró un pasajero con el ID proporcionado: " + passenger.getId());
+            }
+            if (passenger.getEmail() != null && !EMAIL_PATTERN.matcher(passenger.getEmail()).matches()) {
+                throw new AirportAppException("Formato de email inválido para el pasajero con ID: " + passenger.getId());
+            }
+        }
+        return passengerRepository.saveAll(passengers); // `saveAll` actualiza si los IDs existen
+    }
 }

@@ -5,9 +5,6 @@ import com.example.AirportApp.service.AirportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -52,4 +49,14 @@ public class AirportController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+    
+    @PostMapping("/batch")
+public ResponseEntity<List<Airport>> createAirportsBatch(@RequestBody List<Airport> airports) {
+    return ResponseEntity.ok(airportService.saveAll(airports));
+}
+
+@PutMapping("/batch")
+public ResponseEntity<List<Airport>> updateAirportsBatch(@RequestBody List<Airport> airports) {
+    return ResponseEntity.ok(airportService.updateAll(airports));
+}
 }

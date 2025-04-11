@@ -1,0 +1,245 @@
+POST htttp://localhost:8081/plane/batch
+Content-Type: application/json
+
+[
+  {
+    "cruisingSpeed": 903.0,
+    "manufacturer": "Boeing",
+    "maxRange": 15700.0,
+    "model": "787-9 Dreamliner",
+    "passengerCapacity": 296,
+    "registrationNumber": "EC-MHR"
+  },
+  {
+    "cruisingSpeed": 871.0,
+    "manufacturer": "Airbus",
+    "maxRange": 13450.0,
+    "model": "A350-900",
+    "passengerCapacity": 325,
+    "registrationNumber": "F-HREV"
+  },
+  {
+    "cruisingSpeed": 828.0,
+    "manufacturer": "Boeing",
+    "maxRange": 14200.0,
+    "model": "777-300ER",
+    "passengerCapacity": 396,
+    "registrationNumber": "A6-EQO"
+  },
+  {
+    "cruisingSpeed": 839.0,
+    "manufacturer": "Airbus",
+    "maxRange": 11750.0,
+    "model": "A330-900neo",
+    "passengerCapacity": 287,
+    "registrationNumber": "CS-TUK"
+  },
+  {
+    "cruisingSpeed": 870.0,
+    "manufacturer": "Boeing",
+    "maxRange": 16600.0,
+    "model": "747-8",
+    "passengerCapacity": 410,
+    "registrationNumber": "HL7643"
+  },
+  {
+    "cruisingSpeed": 903.0,
+    "manufacturer": "Airbus",
+    "maxRange": 15500.0,
+    "model": "A380-800",
+    "passengerCapacity": 517,
+    "registrationNumber": "A6-EVK"
+  },
+  {
+    "cruisingSpeed": 875.0,
+    "manufacturer": "Boeing",
+    "maxRange": 14815.0,
+    "model": "777-200LR",
+    "passengerCapacity": 317,
+    "registrationNumber": "N780AN"
+  },
+  {
+    "cruisingSpeed": 890.0,
+    "manufacturer": "Airbus",
+    "maxRange": 12300.0,
+    "model": "A340-600",
+    "passengerCapacity": 380,
+    "registrationNumber": "F-WWCJ"
+  },
+  {
+    "cruisingSpeed": 870.0,
+    "manufacturer": "Boeing",
+    "maxRange": 11900.0,
+    "model": "737 MAX 8",
+    "passengerCapacity": 178,
+    "registrationNumber": "N1787B"
+  },
+  {
+    "cruisingSpeed": 871.0,
+    "manufacturer": "Airbus",
+    "maxRange": 6300.0,
+    "model": "A320neo",
+    "passengerCapacity": 194,
+    "registrationNumber": "D-AINQ"
+  },
+  {
+    "cruisingSpeed": 840.0,
+    "manufacturer": "Airbus",
+    "maxRange": 7400.0,
+    "model": "A321neo",
+    "passengerCapacity": 240,
+    "registrationNumber": "B-302D"
+  },
+  {
+    "cruisingSpeed": 828.0,
+    "manufacturer": "Boeing",
+    "maxRange": 5700.0,
+    "model": "737-800",
+    "passengerCapacity": 189,
+    "registrationNumber": "JA732J"
+  },
+  {
+    "cruisingSpeed": 817.0,
+    "manufacturer": "Boeing",
+    "maxRange": 10700.0,
+    "model": "757-300",
+    "passengerCapacity": 243,
+    "registrationNumber": "N728AX"
+  },
+  {
+    "cruisingSpeed": 850.0,
+    "manufacturer": "Airbus",
+    "maxRange": 6850.0,
+    "model": "A319neo",
+    "passengerCapacity": 160,
+    "registrationNumber": "F-HBHE"
+  },
+  {
+    "cruisingSpeed": 820.0,
+    "manufacturer": "Boeing",
+    "maxRange": 5925.0,
+    "model": "737-700",
+    "passengerCapacity": 148,
+    "registrationNumber": "N227WN"
+  },
+  {
+    "cruisingSpeed": 820.0,
+    "manufacturer": "Embraer",
+    "maxRange": 3334.0,
+    "model": "E195-E2",
+    "passengerCapacity": 146,
+    "registrationNumber": "PR-ZIQ"
+  },
+  {
+    "cruisingSpeed": 781.0,
+    "manufacturer": "Bombardier",
+    "maxRange": 5556.0,
+    "model": "CRJ-1000",
+    "passengerCapacity": 104,
+    "registrationNumber": "EC-LRJ"
+  },
+  {
+    "cruisingSpeed": 890.0,
+    "manufacturer": "Airbus",
+    "maxRange": 7500.0,
+    "model": "A220-300",
+    "passengerCapacity": 160,
+    "registrationNumber": "C-GJWT"
+  },
+  {
+    "cruisingSpeed": 780.0,
+    "manufacturer": "Embraer",
+    "maxRange": 3700.0,
+    "model": "E175",
+    "passengerCapacity": 88,
+    "registrationNumber": "N602YX"
+  },
+  {
+    "cruisingSpeed": 815.0,
+    "manufacturer": "ATR",
+    "maxRange": 1667.0,
+    "model": "ATR 72-600",
+    "passengerCapacity": 78,
+    "registrationNumber": "F-HLEP"
+  },
+  {
+    "cruisingSpeed": 850.0,
+    "manufacturer": "Boeing",
+    "maxRange": 9600.0,
+    "model": "707-320B",
+    "passengerCapacity": 189,
+    "registrationNumber": "N729PA"
+  },
+  {
+    "cruisingSpeed": 875.0,
+    "manufacturer": "Douglas",
+    "maxRange": 9200.0,
+    "model": "DC-10-30",
+    "passengerCapacity": 285,
+    "registrationNumber": "N136AA"
+  },
+  {
+    "cruisingSpeed": 900.0,
+    "manufacturer": "Lockheed",
+    "maxRange": 7880.0,
+    "model": "L-1011 TriStar",
+    "passengerCapacity": 400,
+    "registrationNumber": "N310EA"
+  },
+  {
+    "cruisingSpeed": 825.0,
+    "manufacturer": "McDonnell Douglas",
+    "maxRange": 7400.0,
+    "model": "MD-11",
+    "passengerCapacity": 323,
+    "registrationNumber": "PH-KCD"
+  },
+  {
+    "cruisingSpeed": 917.0,
+    "manufacturer": "Boeing",
+    "maxRange": 16100.0,
+    "model": "777X-9",
+    "passengerCapacity": 426,
+    "registrationNumber": "N779XW"
+  },
+  {
+    "cruisingSpeed": 925.0,
+    "manufacturer": "Airbus",
+    "maxRange": 18000.0,
+    "model": "A350-1000ULR",
+    "passengerCapacity": 480,
+    "registrationNumber": "F-WZFU"
+  },
+  {
+    "cruisingSpeed": 885.0,
+    "manufacturer": "Comac",
+    "maxRange": 12000.0,
+    "model": "C919",
+    "passengerCapacity": 192,
+    "registrationNumber": "B-001J"
+  },
+  {
+    "cruisingSpeed": 870.0,
+    "manufacturer": "Irkut",
+    "maxRange": 6000.0,
+    "model": "MC-21-300",
+    "passengerCapacity": 211,
+    "registrationNumber": "RA-73851"
+  },
+  {
+    "cruisingSpeed": 850.0,
+    "manufacturer": "Boeing",
+    "maxRange": 12000.0,
+    "model": "BBJ MAX 7",
+    "passengerCapacity": 172,
+    "registrationNumber": "N887BA"
+  },
+  {
+    "cruisingSpeed": 870.0,
+    "manufacturer": "Airbus",
+    "maxRange": 13000.0,
+    "model": "ACJ320neo",
+    "passengerCapacity": 50,
+    "registrationNumber": "D-AVIB"
+  }
+]

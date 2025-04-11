@@ -12,6 +12,8 @@ public interface BookingService {
     List<Booking> findByPassengerId(Long passengerId);
     List<Booking> findByFlightId(Long flightId);
     Booking save(Booking booking);
+    List<Booking> saveAll(List<Booking> bookings);
     Booking update(Long id, Booking bookingDetails);
+    List<Booking> updateAll(List<Booking> bookings);
     void deleteById(Long id);
 }

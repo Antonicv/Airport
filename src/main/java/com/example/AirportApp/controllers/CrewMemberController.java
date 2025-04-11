@@ -42,9 +42,19 @@ public class CrewMemberController {
         return ResponseEntity.ok(crewMemberService.save(crewMember));
     }
 
+    @PostMapping("/batch")
+    public ResponseEntity<List<CrewMember>> createCrewMembersBatch(@RequestBody List<CrewMember> crewMembers) {
+        return ResponseEntity.ok(crewMemberService.saveAll(crewMembers));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<CrewMember> updateCrewMember(@PathVariable Long id, @RequestBody CrewMember crewMemberDetails) {
         return ResponseEntity.ok(crewMemberService.update(id, crewMemberDetails));
+    }
+
+    @PutMapping("/batch")
+    public ResponseEntity<List<CrewMember>> updateCrewMembersBatch(@RequestBody List<CrewMember> crewMembers) {
+        return ResponseEntity.ok(crewMemberService.updateAll(crewMembers));
     }
 
     @DeleteMapping("/{id}")

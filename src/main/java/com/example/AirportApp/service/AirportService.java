@@ -10,6 +10,8 @@ public interface AirportService {
     Optional<Airport> findById(Long id);
     Optional<Airport> findByIataCode(String iataCode);
     Airport save(Airport airport);
+    List<Airport> saveAll(List<Airport> airports);
     Airport update(Long id, Airport airportDetails);
+    List<Airport> updateAll(List<Airport> airports);
     void deleteById(Long id);
 }

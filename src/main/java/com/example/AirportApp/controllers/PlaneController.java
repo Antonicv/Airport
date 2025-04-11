@@ -42,9 +42,19 @@ public class PlaneController {
         return ResponseEntity.ok(planeService.save(plane));
     }
 
+    @PostMapping("/batch")
+    public ResponseEntity<List<Plane>> createPlanesBatch(@RequestBody List<Plane> planes) {
+        return ResponseEntity.ok(planeService.saveAll(planes));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Plane> updatePlane(@PathVariable Long id, @RequestBody Plane planeDetails) {
         return ResponseEntity.ok(planeService.update(id, planeDetails));
+    }
+
+    @PutMapping("/batch")
+    public ResponseEntity<List<Plane>> updatePlanesBatch(@RequestBody List<Plane> planes) {
+        return ResponseEntity.ok(planeService.updateAll(planes));
     }
 
     @DeleteMapping("/{id}")

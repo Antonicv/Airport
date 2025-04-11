@@ -11,6 +11,8 @@ public interface CrewMemberService {
     Optional<CrewMember> findByEmployeeId(String employeeId);
     List<CrewMember> findByFlightId(Long flightId);
     CrewMember save(CrewMember crewMember);
+    List<CrewMember> saveAll(List<CrewMember> crewMembers);
     CrewMember update(Long id, CrewMember crewMemberDetails);
+    List<CrewMember> updateAll(List<CrewMember> crewMembers);
     void deleteById(Long id);
 }

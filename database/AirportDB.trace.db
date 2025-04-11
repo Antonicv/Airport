@@ -599,3 +599,914 @@ The connection was not closed by the application and is garbage collected [90018
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 54 more
+2025-04-10 09:55:40.024443+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "AIRPORTS" no encontrada
+Table "AIRPORTS" not found; SQL statement:
+INSERT INTO Airports (ALTITUDE, CITY, CONTACT_EMAIL, CONTACT_PHONE, COUNTRY, DST, HAS_INTERNATIONAL_FLIGHTS, IATA_CODE, ICAO_CODE, LATITUDE, LONGITUDE, NAME, NUMBER_OF_GATES, NUMBER_OF_TERMINALS, REGION, TIMEZONE, TZ_DATABASE_TIME_ZONE, WEBSITE) VALUES
+(15, 'Barcelona', 'info@barcelona-airport.com', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BCN', 'LEBL', 41.2971, 2.0785, 'Barcelona–El Prat Airport', 45, 2, 'Catalonia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/barcelona-el-prat.html'),
+(543, 'Madrid', 'informacion.mad@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'MAD', 'LEMD', 40.4720, -3.5626, 'Adolfo Suárez Madrid–Barajas Airport', 175, 4, 'Madrid', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/adolfo-suarez-madrid-barajas.html'),
+(6, 'Palma de Mallorca', 'info.pmi@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'PMI', 'LEPA', 39.5517, 2.7388, 'Palma de Mallorca Airport', 97, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/palma-de-mallorca.html'),
+(8, 'Málaga', 'infoagp@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'AGP', 'LEMG', 36.6750, -4.4967, 'Málaga–Costa del Sol Airport', 68, 3, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/malaga-costa-del-sol.html'),
+(12, 'Seville', 'infosev@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'SVQ', 'LEZL', 37.4175, -5.8983, 'Seville Airport', 11, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/sevilla.html'),
+(30, 'Valencia', 'infovlc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'VLC', 'LEVC', 39.4935, -0.4814, 'Valencia Airport', 10, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/valencia.html'),
+(7, 'Alicante', 'infoalc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'ALC', 'LEAL', 38.2822, -0.5581, 'Alicante–Elche Miguel Hernández Airport', 32, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/alicante-elche.html'),
+(89, 'Bilbao', 'infobio@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BIO', 'LEBB', 43.3006, -2.9106, 'Bilbao Airport', 27, 1, 'Basque Country', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/bilbao.html'),
+(237, 'Granada', 'infogrj@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', FALSE, 'GRX', 'LEGR', 37.1881, -3.7742, 'Federico García Lorca Granada–Jaén Airport', 7, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/granada-jaen.html'),
+(11, 'Ibiza', 'infoibz@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'IBZ', 'LEIB', 38.9086, 1.3694, 'Ibiza Airport', 29, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/ibiza.html'),
+(4, 'London', 'customer.relations@heathrow.com', '+44 844 335 1801', 'United Kingdom', 'BST', TRUE, 'LHR', 'EGLL', 51.4700, -0.4543, 'London Heathrow Airport', 115, 5, 'England', 'Europe/London', 'Europe/London', 'https://www.heathrow.com/'),
+(16, 'Paris', 'contact@parisaeroport.fr', '+33 1 70 36 39 50', 'France', 'CEST', TRUE, 'CDG', 'LFPG', 49.0097, 2.5479, 'Charles de Gaulle Airport', 219, 3, 'Île-de-France', 'Europe/Paris', 'Europe/Paris', 'https://www.parisaeroport.fr/en/passengers'),
+(38, 'Rome', 'adr.info@adr.it', '+39 06 65951', 'Italy', 'CEST', TRUE, 'FCO', 'LIRF', 41.8003, 12.2383, 'Leonardo da Vinci–Fiumicino Airport', 230, 4, 'Lazio', 'Europe/Rome', 'Europe/Rome', 'https://www.adr.it/fiumicino'),
+(46, 'Amsterdam', 'info@schiphol.nl', '+31 20 794 0800', 'Netherlands', 'CEST', TRUE, 'AMS', 'EHAM', 52.3086, 4.7639, 'Amsterdam Airport Schiphol', 165, 1, 'North Holland', 'Europe/Amsterdam', 'Europe/Amsterdam', 'https://www.schiphol.nl/en/'),
+(15, 'Berlin', 'service@berlin-airport.de', '+49 30 6091 60910', 'Germany', 'CEST', TRUE, 'BER', 'EDDB', 52.3667, 13.5033, 'Berlin Brandenburg Airport', 37, 3, 'Brandenburg', 'Europe/Berlin', 'Europe/Berlin', 'https://www.berlin-airport.de/en/'),
+(27, 'Dublin', 'info@daa.ie', '+353 1 814 1111', 'Ireland', 'IST', TRUE, 'DUB', 'EIDW', 53.4213, -6.2701, 'Dublin Airport', 47, 2, 'Leinster', 'Europe/Dublin', 'Europe/Dublin', 'https://www.dublinairport.com/'),
+(10, 'Lisbon', 'lisbon.airport@ana.pt', '+351 21 841 3700', 'Portugal', 'WEST', TRUE, 'LIS', 'LPPT', 38.7742, -9.1342, 'Lisbon Airport', 50, 2, 'Lisbon', 'Europe/Lisbon', 'Europe/Lisbon', 'https://www.aeroportolisboa.pt/en/lis/home'),
+(12, 'Vienna', 'info@viennaairport.com', '+43 1 70070', 'Austria', 'CEST', TRUE, 'VIE', 'LOWW', 48.1100, 16.5697, 'Vienna International Airport', 77, 4, 'Lower Austria', 'Europe/Vienna', 'Europe/Vienna', 'https://www.viennaairport.com/'),
+(8, 'Zurich', 'info@zurich-airport.com', '+41 43 816 22 11', 'Switzerland', 'CEST', TRUE, 'ZRH', 'LSZH', 47.4503, 8.5622, 'Zurich Airport', 67, 3, 'Zurich', 'Europe/Zurich', 'Europe/Zurich', 'https://www.flughafen-zuerich.ch/en/'),
+(5, 'Copenhagen', 'cph@cph.dk', '+45 32 31 32 31', 'Denmark', 'CEST', TRUE, 'CPH', 'EKCH', 55.6181, 12.6563, 'Copenhagen Airport', 60, 3, 'Capital Region of Denmark', 'Europe/Copenhagen', 'Europe/Copenhagen', 'https://www.cph.dk/'),
+(17, 'Stockholm', 'info@swedavia.se', '+46 10 109 00 00', 'Sweden', 'CEST', TRUE, 'ARN', 'ESSA', 59.6519, 17.9186, 'Stockholm Arlanda Airport', 67, 4, 'Stockholm County', 'Europe/Stockholm', 'Europe/Stockholm', 'https://www.swedavia.com/arlanda/'),
+(6, 'Oslo', 'osl.info@avinor.no', '+47 67 03 00 00', 'Norway', 'CEST', TRUE, 'OSL', 'ENGM', 60.1939, 11.1003, 'Oslo Airport, Gardermoen', 52, 1, 'Akershus', 'Europe/Oslo', 'Europe/Oslo', 'https://avinor.no/en/airport/oslo-airport/'),
+(14, 'Helsinki', 'info@finavia.fi', '+358 20 708000', 'Finland', 'EEST', TRUE, 'HEL', 'EFHK', 60.3172, 24.9633, 'Helsinki Airport', 34, 2, 'Uusimaa', 'Europe/Helsinki', 'Europe/Helsinki', 'https://www.finavia.fi/en/airports/helsinki-airport'),
+(3, 'Brussels', 'info@brusselsairport.be', '+32 2 753 77 53', 'Belgium', 'CEST', TRUE, 'BRU', 'EBBR', 50.9014, 4.4847, 'Brussels Airport', 54, 1, 'Flanders', 'Europe/Brussels', 'Europe/Brussels', 'https://www.brusselsairport.be/en'),
+(19, 'Athens', 'aia@aia.gr', '+30 210 3530000', 'Greece', 'EEST', TRUE, 'ATH', 'LGAV', 37.9364, 23.9445, 'Athens International Airport Eleftherios Venizelos', 93, 2, 'Attica', 'Europe/Athens', 'Europe/Athens', 'https://www.aia.gr/en/traveler/'),
+(6, 'Istanbul', 'info@igairport.com', '+90 444 1 442', 'Turkey', 'TRT', TRUE, 'IST', 'LTFM', 41.2750, 28.7528, 'Istanbul Airport', 286, 1, 'Istanbul', 'Europe/Istanbul', 'Europe/Istanbul', 'https://www.istairport.com/en'),
+(21, 'Moscow', 'callcenter@svo.aero', '+7 495 578-65-65', 'Russia', 'MSK', TRUE, 'SVO', 'UUEE', 55.9726, 37.4146, 'Sheremetyevo International Airport', 6, 6, 'Moscow Oblast', 'Europe/Moscow', 'Europe/Moscow', 'https://www.svo.aero/en/'),
+(198, 'New York City', 'panynjpressoffice@panynj.gov', '+1 212 435-7777', 'United States', 'EDT', TRUE, 'JFK', 'KJFK', 40.6413, -73.7781, 'John F. Kennedy International Airport', 128, 6, 'New York', 'America/New_York', 'America/New_York', 'https://www.jfkairport.com/'),
+(8, 'Los Angeles', 'laxpd@lawa.org', '+1 310-646-5252', 'United States', 'PDT', TRUE, 'LAX', 'KLAX', 33.9425, -118.4081, 'Los Angeles International Airport', 146, 9, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.flylax.com/'),
+(9, 'Chicago', 'aviation@cityofchicago.org', '+1 773-686-2200', 'United States', 'CDT', TRUE, 'ORD', 'KORD', 41.9786, -87.9048, 'O\'Hare International Airport', 191, 4, 'Illinois', 'America/Chicago', 'America/Chicago', 'https://www.flychicago.com/ohare/home.html'),
+(10, 'Atlanta', 'airport.comment@atl.com', '+1 404-530-7300', 'United States', 'EDT', TRUE, 'ATL', 'KATL', 33.6397, -84.4281, 'Hartsfield–Jackson Atlanta International Airport', 207, 2, 'Georgia', 'America/New_York', 'America/New_York', 'https://www.atl.com/'),
+(30, 'Dallas', 'asktheairport@dfwairport.com', '+1 972-973-3112', 'United States', 'CDT', TRUE, 'DFW', 'KDFW', 32.8968, -97.0380, 'Dallas/Fort Worth International Airport', 165, 5, 'Texas', 'America/Chicago', 'America/Chicago', 'https://www.dfwairport.com/'),
+(4, 'Denver', 'denairport@flydenver.com', '+1 303-342-2000', 'United States', 'MDT', TRUE, 'DEN', 'KDEN', 39.8617, -104.6731, 'Denver International Airport', 145, 1, 'Colorado', 'America/Denver', 'America/Denver', 'https://www.flydenver.com/'), [42102-232]
+2025-04-10 09:55:45.946395+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "AIRPORTS" no encontrada
+Table "AIRPORTS" not found; SQL statement:
+INSERT INTO Airports (ALTITUDE, CITY, CONTACT_EMAIL, CONTACT_PHONE, COUNTRY, DST, HAS_INTERNATIONAL_FLIGHTS, IATA_CODE, ICAO_CODE, LATITUDE, LONGITUDE, NAME, NUMBER_OF_GATES, NUMBER_OF_TERMINALS, REGION, TIMEZONE, TZ_DATABASE_TIME_ZONE, WEBSITE) VALUES
+(15, 'Barcelona', 'info@barcelona-airport.com', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BCN', 'LEBL', 41.2971, 2.0785, 'Barcelona–El Prat Airport', 45, 2, 'Catalonia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/barcelona-el-prat.html'),
+(543, 'Madrid', 'informacion.mad@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'MAD', 'LEMD', 40.4720, -3.5626, 'Adolfo Suárez Madrid–Barajas Airport', 175, 4, 'Madrid', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/adolfo-suarez-madrid-barajas.html'),
+(6, 'Palma de Mallorca', 'info.pmi@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'PMI', 'LEPA', 39.5517, 2.7388, 'Palma de Mallorca Airport', 97, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/palma-de-mallorca.html'),
+(8, 'Málaga', 'infoagp@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'AGP', 'LEMG', 36.6750, -4.4967, 'Málaga–Costa del Sol Airport', 68, 3, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/malaga-costa-del-sol.html'),
+(12, 'Seville', 'infosev@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'SVQ', 'LEZL', 37.4175, -5.8983, 'Seville Airport', 11, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/sevilla.html'),
+(30, 'Valencia', 'infovlc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'VLC', 'LEVC', 39.4935, -0.4814, 'Valencia Airport', 10, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/valencia.html'),
+(7, 'Alicante', 'infoalc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'ALC', 'LEAL', 38.2822, -0.5581, 'Alicante–Elche Miguel Hernández Airport', 32, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/alicante-elche.html'),
+(89, 'Bilbao', 'infobio@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BIO', 'LEBB', 43.3006, -2.9106, 'Bilbao Airport', 27, 1, 'Basque Country', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/bilbao.html'),
+(237, 'Granada', 'infogrj@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', FALSE, 'GRX', 'LEGR', 37.1881, -3.7742, 'Federico García Lorca Granada–Jaén Airport', 7, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/granada-jaen.html'),
+(11, 'Ibiza', 'infoibz@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'IBZ', 'LEIB', 38.9086, 1.3694, 'Ibiza Airport', 29, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/ibiza.html'),
+(4, 'London', 'customer.relations@heathrow.com', '+44 844 335 1801', 'United Kingdom', 'BST', TRUE, 'LHR', 'EGLL', 51.4700, -0.4543, 'London Heathrow Airport', 115, 5, 'England', 'Europe/London', 'Europe/London', 'https://www.heathrow.com/'),
+(16, 'Paris', 'contact@parisaeroport.fr', '+33 1 70 36 39 50', 'France', 'CEST', TRUE, 'CDG', 'LFPG', 49.0097, 2.5479, 'Charles de Gaulle Airport', 219, 3, 'Île-de-France', 'Europe/Paris', 'Europe/Paris', 'https://www.parisaeroport.fr/en/passengers'),
+(38, 'Rome', 'adr.info@adr.it', '+39 06 65951', 'Italy', 'CEST', TRUE, 'FCO', 'LIRF', 41.8003, 12.2383, 'Leonardo da Vinci–Fiumicino Airport', 230, 4, 'Lazio', 'Europe/Rome', 'Europe/Rome', 'https://www.adr.it/fiumicino'),
+(46, 'Amsterdam', 'info@schiphol.nl', '+31 20 794 0800', 'Netherlands', 'CEST', TRUE, 'AMS', 'EHAM', 52.3086, 4.7639, 'Amsterdam Airport Schiphol', 165, 1, 'North Holland', 'Europe/Amsterdam', 'Europe/Amsterdam', 'https://www.schiphol.nl/en/'),
+(15, 'Berlin', 'service@berlin-airport.de', '+49 30 6091 60910', 'Germany', 'CEST', TRUE, 'BER', 'EDDB', 52.3667, 13.5033, 'Berlin Brandenburg Airport', 37, 3, 'Brandenburg', 'Europe/Berlin', 'Europe/Berlin', 'https://www.berlin-airport.de/en/'),
+(27, 'Dublin', 'info@daa.ie', '+353 1 814 1111', 'Ireland', 'IST', TRUE, 'DUB', 'EIDW', 53.4213, -6.2701, 'Dublin Airport', 47, 2, 'Leinster', 'Europe/Dublin', 'Europe/Dublin', 'https://www.dublinairport.com/'),
+(10, 'Lisbon', 'lisbon.airport@ana.pt', '+351 21 841 3700', 'Portugal', 'WEST', TRUE, 'LIS', 'LPPT', 38.7742, -9.1342, 'Lisbon Airport', 50, 2, 'Lisbon', 'Europe/Lisbon', 'Europe/Lisbon', 'https://www.aeroportolisboa.pt/en/lis/home'),
+(12, 'Vienna', 'info@viennaairport.com', '+43 1 70070', 'Austria', 'CEST', TRUE, 'VIE', 'LOWW', 48.1100, 16.5697, 'Vienna International Airport', 77, 4, 'Lower Austria', 'Europe/Vienna', 'Europe/Vienna', 'https://www.viennaairport.com/'),
+(8, 'Zurich', 'info@zurich-airport.com', '+41 43 816 22 11', 'Switzerland', 'CEST', TRUE, 'ZRH', 'LSZH', 47.4503, 8.5622, 'Zurich Airport', 67, 3, 'Zurich', 'Europe/Zurich', 'Europe/Zurich', 'https://www.flughafen-zuerich.ch/en/'),
+(5, 'Copenhagen', 'cph@cph.dk', '+45 32 31 32 31', 'Denmark', 'CEST', TRUE, 'CPH', 'EKCH', 55.6181, 12.6563, 'Copenhagen Airport', 60, 3, 'Capital Region of Denmark', 'Europe/Copenhagen', 'Europe/Copenhagen', 'https://www.cph.dk/'),
+(17, 'Stockholm', 'info@swedavia.se', '+46 10 109 00 00', 'Sweden', 'CEST', TRUE, 'ARN', 'ESSA', 59.6519, 17.9186, 'Stockholm Arlanda Airport', 67, 4, 'Stockholm County', 'Europe/Stockholm', 'Europe/Stockholm', 'https://www.swedavia.com/arlanda/'),
+(6, 'Oslo', 'osl.info@avinor.no', '+47 67 03 00 00', 'Norway', 'CEST', TRUE, 'OSL', 'ENGM', 60.1939, 11.1003, 'Oslo Airport, Gardermoen', 52, 1, 'Akershus', 'Europe/Oslo', 'Europe/Oslo', 'https://avinor.no/en/airport/oslo-airport/'),
+(14, 'Helsinki', 'info@finavia.fi', '+358 20 708000', 'Finland', 'EEST', TRUE, 'HEL', 'EFHK', 60.3172, 24.9633, 'Helsinki Airport', 34, 2, 'Uusimaa', 'Europe/Helsinki', 'Europe/Helsinki', 'https://www.finavia.fi/en/airports/helsinki-airport'),
+(3, 'Brussels', 'info@brusselsairport.be', '+32 2 753 77 53', 'Belgium', 'CEST', TRUE, 'BRU', 'EBBR', 50.9014, 4.4847, 'Brussels Airport', 54, 1, 'Flanders', 'Europe/Brussels', 'Europe/Brussels', 'https://www.brusselsairport.be/en'),
+(19, 'Athens', 'aia@aia.gr', '+30 210 3530000', 'Greece', 'EEST', TRUE, 'ATH', 'LGAV', 37.9364, 23.9445, 'Athens International Airport Eleftherios Venizelos', 93, 2, 'Attica', 'Europe/Athens', 'Europe/Athens', 'https://www.aia.gr/en/traveler/'),
+(6, 'Istanbul', 'info@igairport.com', '+90 444 1 442', 'Turkey', 'TRT', TRUE, 'IST', 'LTFM', 41.2750, 28.7528, 'Istanbul Airport', 286, 1, 'Istanbul', 'Europe/Istanbul', 'Europe/Istanbul', 'https://www.istairport.com/en'),
+(21, 'Moscow', 'callcenter@svo.aero', '+7 495 578-65-65', 'Russia', 'MSK', TRUE, 'SVO', 'UUEE', 55.9726, 37.4146, 'Sheremetyevo International Airport', 6, 6, 'Moscow Oblast', 'Europe/Moscow', 'Europe/Moscow', 'https://www.svo.aero/en/'),
+(198, 'New York City', 'panynjpressoffice@panynj.gov', '+1 212 435-7777', 'United States', 'EDT', TRUE, 'JFK', 'KJFK', 40.6413, -73.7781, 'John F. Kennedy International Airport', 128, 6, 'New York', 'America/New_York', 'America/New_York', 'https://www.jfkairport.com/'),
+(8, 'Los Angeles', 'laxpd@lawa.org', '+1 310-646-5252', 'United States', 'PDT', TRUE, 'LAX', 'KLAX', 33.9425, -118.4081, 'Los Angeles International Airport', 146, 9, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.flylax.com/'),
+(9, 'Chicago', 'aviation@cityofchicago.org', '+1 773-686-2200', 'United States', 'CDT', TRUE, 'ORD', 'KORD', 41.9786, -87.9048, 'O\'Hare International Airport', 191, 4, 'Illinois', 'America/Chicago', 'America/Chicago', 'https://www.flychicago.com/ohare/home.html'),
+(10, 'Atlanta', 'airport.comment@atl.com', '+1 404-530-7300', 'United States', 'EDT', TRUE, 'ATL', 'KATL', 33.6397, -84.4281, 'Hartsfield–Jackson Atlanta International Airport', 207, 2, 'Georgia', 'America/New_York', 'America/New_York', 'https://www.atl.com/'),
+(30, 'Dallas', 'asktheairport@dfwairport.com', '+1 972-973-3112', 'United States', 'CDT', TRUE, 'DFW', 'KDFW', 32.8968, -97.0380, 'Dallas/Fort Worth International Airport', 165, 5, 'Texas', 'America/Chicago', 'America/Chicago', 'https://www.dfwairport.com/'),
+(4, 'Denver', 'denairport@flydenver.com', '+1 303-342-2000', 'United States', 'MDT', TRUE, 'DEN', 'KDEN', 39.8617, -104.6731, 'Denver International Airport', 145, 1, 'Colorado', 'America/Denver', 'America/Denver', 'https://www.flydenver.com/'), [42102-232]
+2025-04-10 09:56:18.102259+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "AIRPORTS" no encontrada
+Table "AIRPORTS" not found; SQL statement:
+INSERT INTO Airports (ALTITUDE, CITY, CONTACT_EMAIL, CONTACT_PHONE, COUNTRY, DST, HAS_INTERNATIONAL_FLIGHTS, IATA_CODE, ICAO_CODE, LATITUDE, LONGITUDE, NAME, NUMBER_OF_GATES, NUMBER_OF_TERMINALS, REGION, TIMEZONE, TZ_DATABASE_TIME_ZONE, WEBSITE) VALUES
+(15, 'Barcelona', 'info@barcelona-airport.com', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BCN', 'LEBL', 41.2971, 2.0785, 'Barcelona–El Prat Airport', 45, 2, 'Catalonia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/barcelona-el-prat.html'),
+(543, 'Madrid', 'informacion.mad@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'MAD', 'LEMD', 40.4720, -3.5626, 'Adolfo Suárez Madrid–Barajas Airport', 175, 4, 'Madrid', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/adolfo-suarez-madrid-barajas.html'),
+(6, 'Palma de Mallorca', 'info.pmi@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'PMI', 'LEPA', 39.5517, 2.7388, 'Palma de Mallorca Airport', 97, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/palma-de-mallorca.html'),
+(8, 'Málaga', 'infoagp@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'AGP', 'LEMG', 36.6750, -4.4967, 'Málaga–Costa del Sol Airport', 68, 3, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/malaga-costa-del-sol.html'),
+(12, 'Seville', 'infosev@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'SVQ', 'LEZL', 37.4175, -5.8983, 'Seville Airport', 11, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/sevilla.html'),
+(30, 'Valencia', 'infovlc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'VLC', 'LEVC', 39.4935, -0.4814, 'Valencia Airport', 10, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/valencia.html'),
+(7, 'Alicante', 'infoalc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'ALC', 'LEAL', 38.2822, -0.5581, 'Alicante–Elche Miguel Hernández Airport', 32, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/alicante-elche.html'),
+(89, 'Bilbao', 'infobio@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BIO', 'LEBB', 43.3006, -2.9106, 'Bilbao Airport', 27, 1, 'Basque Country', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/bilbao.html'),
+(237, 'Granada', 'infogrj@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', FALSE, 'GRX', 'LEGR', 37.1881, -3.7742, 'Federico García Lorca Granada–Jaén Airport', 7, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/granada-jaen.html'),
+(11, 'Ibiza', 'infoibz@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'IBZ', 'LEIB', 38.9086, 1.3694, 'Ibiza Airport', 29, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/ibiza.html'),
+(4, 'London', 'customer.relations@heathrow.com', '+44 844 335 1801', 'United Kingdom', 'BST', TRUE, 'LHR', 'EGLL', 51.4700, -0.4543, 'London Heathrow Airport', 115, 5, 'England', 'Europe/London', 'Europe/London', 'https://www.heathrow.com/'),
+(16, 'Paris', 'contact@parisaeroport.fr', '+33 1 70 36 39 50', 'France', 'CEST', TRUE, 'CDG', 'LFPG', 49.0097, 2.5479, 'Charles de Gaulle Airport', 219, 3, 'Île-de-France', 'Europe/Paris', 'Europe/Paris', 'https://www.parisaeroport.fr/en/passengers'),
+(38, 'Rome', 'adr.info@adr.it', '+39 06 65951', 'Italy', 'CEST', TRUE, 'FCO', 'LIRF', 41.8003, 12.2383, 'Leonardo da Vinci–Fiumicino Airport', 230, 4, 'Lazio', 'Europe/Rome', 'Europe/Rome', 'https://www.adr.it/fiumicino'),
+(46, 'Amsterdam', 'info@schiphol.nl', '+31 20 794 0800', 'Netherlands', 'CEST', TRUE, 'AMS', 'EHAM', 52.3086, 4.7639, 'Amsterdam Airport Schiphol', 165, 1, 'North Holland', 'Europe/Amsterdam', 'Europe/Amsterdam', 'https://www.schiphol.nl/en/'),
+(15, 'Berlin', 'service@berlin-airport.de', '+49 30 6091 60910', 'Germany', 'CEST', TRUE, 'BER', 'EDDB', 52.3667, 13.5033, 'Berlin Brandenburg Airport', 37, 3, 'Brandenburg', 'Europe/Berlin', 'Europe/Berlin', 'https://www.berlin-airport.de/en/'),
+(27, 'Dublin', 'info@daa.ie', '+353 1 814 1111', 'Ireland', 'IST', TRUE, 'DUB', 'EIDW', 53.4213, -6.2701, 'Dublin Airport', 47, 2, 'Leinster', 'Europe/Dublin', 'Europe/Dublin', 'https://www.dublinairport.com/'),
+(10, 'Lisbon', 'lisbon.airport@ana.pt', '+351 21 841 3700', 'Portugal', 'WEST', TRUE, 'LIS', 'LPPT', 38.7742, -9.1342, 'Lisbon Airport', 50, 2, 'Lisbon', 'Europe/Lisbon', 'Europe/Lisbon', 'https://www.aeroportolisboa.pt/en/lis/home'),
+(12, 'Vienna', 'info@viennaairport.com', '+43 1 70070', 'Austria', 'CEST', TRUE, 'VIE', 'LOWW', 48.1100, 16.5697, 'Vienna International Airport', 77, 4, 'Lower Austria', 'Europe/Vienna', 'Europe/Vienna', 'https://www.viennaairport.com/'),
+(8, 'Zurich', 'info@zurich-airport.com', '+41 43 816 22 11', 'Switzerland', 'CEST', TRUE, 'ZRH', 'LSZH', 47.4503, 8.5622, 'Zurich Airport', 67, 3, 'Zurich', 'Europe/Zurich', 'Europe/Zurich', 'https://www.flughafen-zuerich.ch/en/'),
+(5, 'Copenhagen', 'cph@cph.dk', '+45 32 31 32 31', 'Denmark', 'CEST', TRUE, 'CPH', 'EKCH', 55.6181, 12.6563, 'Copenhagen Airport', 60, 3, 'Capital Region of Denmark', 'Europe/Copenhagen', 'Europe/Copenhagen', 'https://www.cph.dk/'),
+(17, 'Stockholm', 'info@swedavia.se', '+46 10 109 00 00', 'Sweden', 'CEST', TRUE, 'ARN', 'ESSA', 59.6519, 17.9186, 'Stockholm Arlanda Airport', 67, 4, 'Stockholm County', 'Europe/Stockholm', 'Europe/Stockholm', 'https://www.swedavia.com/arlanda/'),
+(6, 'Oslo', 'osl.info@avinor.no', '+47 67 03 00 00', 'Norway', 'CEST', TRUE, 'OSL', 'ENGM', 60.1939, 11.1003, 'Oslo Airport, Gardermoen', 52, 1, 'Akershus', 'Europe/Oslo', 'Europe/Oslo', 'https://avinor.no/en/airport/oslo-airport/'),
+(14, 'Helsinki', 'info@finavia.fi', '+358 20 708000', 'Finland', 'EEST', TRUE, 'HEL', 'EFHK', 60.3172, 24.9633, 'Helsinki Airport', 34, 2, 'Uusimaa', 'Europe/Helsinki', 'Europe/Helsinki', 'https://www.finavia.fi/en/airports/helsinki-airport'),
+(3, 'Brussels', 'info@brusselsairport.be', '+32 2 753 77 53', 'Belgium', 'CEST', TRUE, 'BRU', 'EBBR', 50.9014, 4.4847, 'Brussels Airport', 54, 1, 'Flanders', 'Europe/Brussels', 'Europe/Brussels', 'https://www.brusselsairport.be/en'),
+(19, 'Athens', 'aia@aia.gr', '+30 210 3530000', 'Greece', 'EEST', TRUE, 'ATH', 'LGAV', 37.9364, 23.9445, 'Athens International Airport Eleftherios Venizelos', 93, 2, 'Attica', 'Europe/Athens', 'Europe/Athens', 'https://www.aia.gr/en/traveler/'),
+(6, 'Istanbul', 'info@igairport.com', '+90 444 1 442', 'Turkey', 'TRT', TRUE, 'IST', 'LTFM', 41.2750, 28.7528, 'Istanbul Airport', 286, 1, 'Istanbul', 'Europe/Istanbul', 'Europe/Istanbul', 'https://www.istairport.com/en'),
+(21, 'Moscow', 'callcenter@svo.aero', '+7 495 578-65-65', 'Russia', 'MSK', TRUE, 'SVO', 'UUEE', 55.9726, 37.4146, 'Sheremetyevo International Airport', 6, 6, 'Moscow Oblast', 'Europe/Moscow', 'Europe/Moscow', 'https://www.svo.aero/en/'),
+(198, 'New York City', 'panynjpressoffice@panynj.gov', '+1 212 435-7777', 'United States', 'EDT', TRUE, 'JFK', 'KJFK', 40.6413, -73.7781, 'John F. Kennedy International Airport', 128, 6, 'New York', 'America/New_York', 'America/New_York', 'https://www.jfkairport.com/'),
+(8, 'Los Angeles', 'laxpd@lawa.org', '+1 310-646-5252', 'United States', 'PDT', TRUE, 'LAX', 'KLAX', 33.9425, -118.4081, 'Los Angeles International Airport', 146, 9, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.flylax.com/'),
+(9, 'Chicago', 'aviation@cityofchicago.org', '+1 773-686-2200', 'United States', 'CDT', TRUE, 'ORD', 'KORD', 41.9786, -87.9048, 'O\'Hare International Airport', 191, 4, 'Illinois', 'America/Chicago', 'America/Chicago', 'https://www.flychicago.com/ohare/home.html'),
+(10, 'Atlanta', 'airport.comment@atl.com', '+1 404-530-7300', 'United States', 'EDT', TRUE, 'ATL', 'KATL', 33.6397, -84.4281, 'Hartsfield–Jackson Atlanta International Airport', 207, 2, 'Georgia', 'America/New_York', 'America/New_York', 'https://www.atl.com/'),
+(30, 'Dallas', 'asktheairport@dfwairport.com', '+1 972-973-3112', 'United States', 'CDT', TRUE, 'DFW', 'KDFW', 32.8968, -97.0380, 'Dallas/Fort Worth International Airport', 165, 5, 'Texas', 'America/Chicago', 'America/Chicago', 'https://www.dfwairport.com/'),
+(4, 'Denver', 'denairport@flydenver.com', '+1 303-342-2000', 'United States', 'MDT', TRUE, 'DEN', 'KDEN', 39.8617, -104.6731, 'Denver International Airport', 145, 1, 'Colorado', 'America/Denver', 'America/Denver', 'https://www.flydenver.com/'),7, 'Fort Lauderdale', NULL, '+1 954-359-1200', 'United States', 'EDT', TRUE, 'FLL', 'KFLL', 26.0725, -80.1528, 'Fort Lauderdale–Hollywood International Airport', 128, 4, 'Florida', 'America/New_York', 'America/New_York', 'https://www.broward.org/Airport/'),
+(9, 'Orlando', '[dirección de correo electrónico eliminada]', '+1 407-825-2001', 'United States', 'EDT', TRUE, 'MCO', 'KMCO', 28.4294, -81.3090, 'Orlando International Airport', 129, 3, 'Florida', 'America/New_York', 'America/New_York', 'https://orlandoairports.net/'),
+(3, 'Miami', '[dirección de correo electrónico eliminada]', '+1 305-876-7000', 'United States', 'EDT', TRUE, 'MIA', 'KMIA', 25.7933, -80.2906, 'Miami International Airport', 131, 1, 'Florida', 'America/New_York', 'America/New_York', 'https://www.miami-airport.com/'),
+(10, 'Tampa', '[dirección de correo electrónico eliminada]', '+1 813-870-8700', 'United States', 'EDT', FALSE, 'TPA', 'KTPA', 27.9755, -82.5332, 'Tampa International Airport', 62, 1, 'Florida', 'America/New_York', 'America/New_York', 'https://www.tampaairport.com/'),
+(15, 'San Francisco', '[dirección de correo electrónico eliminada]', '+1 650-821-8211', 'United States', 'PDT', TRUE, 'SFO', 'KSFO', 37.6189, -122.3750, 'San Francisco International Airport', 115, 4, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.flysfo.com/'),
+(4, 'Seattle', '[dirección de correo electrónico eliminada]', '+1 206-787-5388', 'United States', 'PDT', TRUE, 'SEA', 'KSEA', 47.4502, -122.3088, 'Seattle–Tacoma International Airport', 105, 1, 'Washington', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.portseattle.org/sea-tac'),
+(10, 'Phoenix', '[dirección de correo electrónico eliminada]', '+1 602-273-3300', 'United States', 'MST', TRUE, 'PHX', 'KPHX', 33.4342, -112.0117, 'Phoenix Sky Harbor International Airport', 120, 2, 'Arizona', 'America/Phoenix', 'America/Phoenix', 'https://www.skyharbor.com/'),
+(6, 'San Diego', '[dirección de correo electrónico eliminada]', '+1 619-400-2400', 'United States', 'PDT', TRUE, 'SAN', 'KSAN', 32.7336, -117.1900, 'San Diego International Airport', 51, 2, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.san.org/'),
+(17, 'Philadelphia', '[dirección de correo electrónico eliminada]', '+1 215-937-6937', 'United States', 'EDT', TRUE, 'PHL', 'KPHL', 39.8720, -75.2400, 'Philadelphia International Airport', 125, 7, 'Pennsylvania', 'America/New_York', 'America/New_York', 'https://www.phl.org/'),
+(10, 'Houston', '[dirección de correo electrónico eliminada]', '+1 281-230-3100', 'United States', 'CDT', TRUE, 'IAH', 'KIAH', 29.9844, -95.3414, 'George Bush Intercontinental Airport', 162, 5, 'Texas', 'America/Chicago', 'America/Chicago', 'https://www.fly2houston.com/iah'),
+(5, 'Boston', '[dirección de correo electrónico eliminada]', '+1 617-561-1800', 'United States', 'EDT', TRUE, 'BOS', 'KBOS', 42.3643, -71.0052, 'Boston Logan International Airport', 102, 4, 'Massachusetts', 'America/New_York', 'America/New_York', 'https://www.massport.com/logan-airport/'),
+(16, 'Minneapolis', '[dirección de correo electrónico eliminada]', '+1 612-726-5555', 'United States', 'CDT', TRUE, 'MSP', 'KMSP', 44.8819, -93.2217, 'Minneapolis–Saint Paul International Airport', 130, 2, 'Minnesota', 'America/Chicago', 'America/Chicago', 'https://www.mspairport.com/'),
+(26, 'Detroit', '[dirección de correo electrónico eliminada]', '+1 734-247-7678', 'United States', 'EDT', TRUE, 'DTW', 'KDTW', 42.2125, -83.3534, 'Detroit Metropolitan Airport', 129, 2, 'Michigan', 'America/Detroit', 'America/Detroit', 'https://www.metroairport.com/'),
+(19, 'Toronto', '[dirección de correo electrónico eliminada]', '+1 416-776-3000', 'Canada', 'EDT', TRUE, 'YYZ', 'CYYZ', 43.6777, -79.6248, 'Toronto Pearson International Airport', 187, 2, 'Ontario', 'America/Toronto', 'America/Toronto', 'https://www.torontopearson.com/'),
+(16, 'Montreal', '[dirección de correo electrónico eliminada]', '+1 514-394-7377', 'Canada', 'EDT', TRUE, 'YUL', 'CYUL', 45.4706, -73.6397, 'Montréal–Trudeau International Airport', 66, 1, 'Quebec', 'America/Montreal', 'America/Montreal', 'https://www.admtl.com/en'),
+(7, 'Vancouver', '[dirección de correo electrónico eliminada]', '+1 604-207-7077', 'Canada', 'PDT', TRUE, 'YVR', 'CYVR', 49.1939, -123.1831, 'Vancouver International Airport', 94, 3, 'British Columbia', 'America/Vancouver', 'America/Vancouver', 'https://www.yvr.ca/'),
+(3, 'Calgary', '[dirección de correo electrónico eliminada]', '+1 403-735-1200', 'Canada', 'MDT', TRUE, 'YYC', 'CYYC', 51.1238, -114.0117, 'Calgary International Airport', 63, 2, 'Alberta', 'America/Edmonton', 'America/Edmonton', 'https://www.yyc.com/'),
+(1, 'Mexico City', '[dirección de correo electrónico eliminada]', '+52 55 2482 2424', 'Mexico', 'CST', TRUE, 'MEX', 'MMMX', 1222, 20.1339, -99.0719, 'Mexico City International Airport', 45, 2, 'Mexico City', 'America/Mexico_City', 'America/Mexico_City', 'https://www.aicm.com.mx/'),
+(15, 'Cancun', '[dirección de correo electrónico eliminada]', '+52 998 848 7200', 'Mexico', 'EST', TRUE, 'CUN', 'MMUN', 21.0354, -86.8747, 'Cancún International Airport', 69, 4, 'Quintana Roo', 'America/Cancun', 'America/Cancun', 'https://www.cancunairport.com/'),
+(2240, 'Bogotá', '[dirección de correo electrónico eliminada]', '+57 1 2662000', 'Colombia', NULL, TRUE, 'BOG', 'SKBO', 4.7016, -74.1447, 'El Dorado International Airport', 44, 2, 'Bogotá', 'America/Bogota', 'America/Bogota', 'https://eldorado.aero/en/'),
+(6, 'Rio de Janeiro', '[dirección de correo electrónico eliminada]', '+55 21 3004-6000', 'Brazil', '-03', TRUE, 'GIG', 'SBGL', -22.8129, -43.2519, 'Rio de Janeiro/Galeão – Antonio Carlos Jobim International Airport', 34, 2, 'Rio de Janeiro', 'America/Sao_Paulo', 'America/Sao_Paulo', 'https://riogaleao.com/en/'),
+(780, 'São Paulo', '[dirección de correo electrónico eliminada]', '+55 11 2445-2945', 'Brazil', '-03', TRUE, 'GRU', 'SBGR', -23.4356, -46.4731, 'São Paulo–Guarulhos International Airport', 45, 3, 'São Paulo', 'America/Sao_Paulo', 'America/Sao_Paulo', 'https://www.gru.com.br/en/'),
+(153, 'Buenos Aires', '[dirección de correo electrónico eliminada]', '+54 11 5480-6111', 'Argentina', NULL, TRUE, 'EZE', 'SAEZ', -34.8222, -58.5358, 'Ministro Pistarini International Airport', 33, 3, 'Buenos Aires Province', 'America/Argentina/Buenos_Aires', 'America/Argentina/Buenos_Aires', 'https://www.aa2000.com.ar/'),
+(52, 'Santiago', '[dirección de correo electrónico eliminada]', '+56 2 2690 1700', 'Chile', NULL, TRUE, 'SCL', 'SCEL', -33.3983, -70.7842, 'Arturo Merino Benítez International Airport', 38, 2, 'Santiago Metropolitan Region', 'America/Santiago', 'America/Santiago', 'https://www.nuevopudahuel.cl/'),
+(6, 'Sydney', '[dirección de correo electrónico eliminada]', '+61 2 9667 9111', 'Australia', 'AEST', TRUE, 'SYD', 'YSSY', -33.9500, 151.1772, 'Sydney Airport', 69, 3, 'New South Wales', 'Australia/Sydney', 'Australia/Sydney', 'https://www.sydneyairport.com.au/'),
+(4, 'Melbourne', '[dirección de correo electrónico eliminada]', '+61 3 9297 1600', 'Australia', 'AEST', TRUE, 'MEL', 'YMML', -37.6733, 144.8433, 'Melbourne Airport', 68, 4, 'Victoria', 'Australia/Melbourne', 'Australia/Melbourne', 'https://www.melbourneairport.com.au/'),
+(8, 'Brisbane', '[dirección de correo electrónico eliminada]', '+61 7 3406 3000', 'Australia', 'AEST', TRUE, 'BNE', 'YBBN', -27.3842, 153.1172, 'Brisbane Airport', 64, 2, 'Queensland', 'Australia/Brisbane', 'Australia/Brisbane', 'https://www.bne.com.au/'),
+(3, 'Perth', '[dirección de correo electrónico eliminada]', '+61 8 9478 8888', 'Australia', 'AWST', TRUE, 'PER', 'YPPH', -31.9403, 115.9667, 'Perth Airport', 52, 4, 'Western Australia', 'Australia/Perth', 'Australia/Perth', 'https://www.perthairport.com.au/'),
+(9, 'Auckland', '[dirección de correo electrónico eliminada]', '+64 9 275 0789', 'New Zealand', 'NZST', TRUE, 'AKL', 'NZAA', -37.0081, 174.7922, 'Auckland Airport', 33, 1, 'Auckland', 'Pacific/Auckland', 'Pacific/Auckland', 'https://www.aucklandairport.co.nz/'),
+(7, 'Dubai', '[dirección de correo electrónico eliminada]', '+971 4 224 5555', 'United Arab Emirates', NULL, TRUE, 'DXB', 'OMDB', 25.2528, 55.3644, 'Dubai International Airport', 229, 3, 'Dubai', 'Asia/Dubai', 'Asia/Dubai', 'https://www.dubaiairports.ae/'),
+(16, 'Doha', '[dirección de correo electrónico eliminada]', '+974 4010 6666', 'Qatar', NULL, TRUE, 'DOH', 'OTHH', 25.2744, 51.6083, 'Hamad International Airport', NULL, 1, 'Doha', 'Asia/Qatar', 'Asia/Qatar', 'https://dohahamadairport.com/'),
+(13, 'Singapore', '[dirección de correo electrónico eliminada]', '+65 6595 6868', 'Singapore', NULL, TRUE, 'SIN', 'WSSS', 1.3521, 103.9911, 'Singapore Changi Airport', 184, 4, 'Changi', 'Asia/Singapore', 'Asia/Singapore', 'https://www.changiairport.com/'),
+(6, 'Hong Kong', '[dirección de correo electrónico eliminada]', '+852 2180 8888', 'Hong Kong', 'HKT', TRUE, 'HKG', 'VHHH', 22.3089, 113.9153, 'Hong Kong International Airport', 182, 2, 'Chek Lap Kok', 'Asia/Hong_Kong', 'Asia/Hong_Kong', 'https://www.hongkongairport.com/'),
+(41, 'Tokyo', '[dirección de correo electrónico eliminada]', '+81 476-34-8000', 'Japan', 'JST', TRUE, 'NRT', 'RJAA', 35.7647, 140.3864, 'Narita International Airport', 122, 3, 'Chiba', 'Asia/Tokyo', 'Asia/Tokyo', 'https://www.narita-airport.jp/en/'),
+(72, 'Seoul', '[dirección de correo electrónico eliminada]', '+82 1577-2600', 'South Korea', 'KST', TRUE, 'ICN', 'RKSI', 37.4692, 126.4500, 'Incheon International Airport', 128, 2, 'Incheon', 'Asia/Seoul', 'Asia/Seoul', 'https://www.airport.kr/'),
+(6, 'Shanghai', '[dirección de correo electrónico eliminada]', '+86 21 96990', 'China', 'CST', TRUE, 'PVG', 'ZSPD', 31.1433, 121.8053, 'Shanghai Pudong International Airport', 282, 2, 'Shanghai', 'Asia/Shanghai', 'Asia/Shanghai', 'http://en.shairport.com/'), [42102-232]
+2025-04-10 09:57:54.738974+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "AIRPORTS" no encontrada
+Table "AIRPORTS" not found; SQL statement:
+INSERT INTO Airports (ALTITUDE, CITY, CONTACT_EMAIL, CONTACT_PHONE, COUNTRY, DST, HAS_INTERNATIONAL_FLIGHTS, IATA_CODE, ICAO_CODE, LATITUDE, LONGITUDE, NAME, NUMBER_OF_GATES, NUMBER_OF_TERMINALS, REGION, TIMEZONE, TZ_DATABASE_TIME_ZONE, WEBSITE) VALUES
+(15, 'Barcelona', 'info@barcelona-airport.com', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BCN', 'LEBL', 41.2971, 2.0785, 'Barcelona–El Prat Airport', 45, 2, 'Catalonia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/barcelona-el-prat.html'),
+(543, 'Madrid', 'informacion.mad@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'MAD', 'LEMD', 40.4720, -3.5626, 'Adolfo Suárez Madrid–Barajas Airport', 175, 4, 'Madrid', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/adolfo-suarez-madrid-barajas.html'),
+(6, 'Palma de Mallorca', 'info.pmi@aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'PMI', 'LEPA', 39.5517, 2.7388, 'Palma de Mallorca Airport', 97, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/palma-de-mallorca.html'),
+(8, 'Málaga', 'infoagp@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'AGP', 'LEMG', 36.6750, -4.4967, 'Málaga–Costa del Sol Airport', 68, 3, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/malaga-costa-del-sol.html'),
+(12, 'Seville', 'infosev@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'SVQ', 'LEZL', 37.4175, -5.8983, 'Seville Airport', 11, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/sevilla.html'),
+(30, 'Valencia', 'infovlc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'VLC', 'LEVC', 39.4935, -0.4814, 'Valencia Airport', 10, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/valencia.html'),
+(7, 'Alicante', 'infoalc@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'ALC', 'LEAL', 38.2822, -0.5581, 'Alicante–Elche Miguel Hernández Airport', 32, 1, 'Valencian Community', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/alicante-elche.html'),
+(89, 'Bilbao', 'infobio@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'BIO', 'LEBB', 43.3006, -2.9106, 'Bilbao Airport', 27, 1, 'Basque Country', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/bilbao.html'),
+(237, 'Granada', 'infogrj@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', FALSE, 'GRX', 'LEGR', 37.1881, -3.7742, 'Federico García Lorca Granada–Jaén Airport', 7, 1, 'Andalusia', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/granada-jaen.html'),
+(11, 'Ibiza', 'infoibz@e-externas.aena.es', '+34 902 40 47 04', 'Spain', 'CEST', TRUE, 'IBZ', 'LEIB', 38.9086, 1.3694, 'Ibiza Airport', 29, 1, 'Balearic Islands', 'Europe/Madrid', 'Europe/Madrid', 'https://www.aena.es/en/ibiza.html'),
+(4, 'London', 'customer.relations@heathrow.com', '+44 844 335 1801', 'United Kingdom', 'BST', TRUE, 'LHR', 'EGLL', 51.4700, -0.4543, 'London Heathrow Airport', 115, 5, 'England', 'Europe/London', 'Europe/London', 'https://www.heathrow.com/'),
+(16, 'Paris', 'contact@parisaeroport.fr', '+33 1 70 36 39 50', 'France', 'CEST', TRUE, 'CDG', 'LFPG', 49.0097, 2.5479, 'Charles de Gaulle Airport', 219, 3, 'Île-de-France', 'Europe/Paris', 'Europe/Paris', 'https://www.parisaeroport.fr/en/passengers'),
+(38, 'Rome', 'adr.info@adr.it', '+39 06 65951', 'Italy', 'CEST', TRUE, 'FCO', 'LIRF', 41.8003, 12.2383, 'Leonardo da Vinci–Fiumicino Airport', 230, 4, 'Lazio', 'Europe/Rome', 'Europe/Rome', 'https://www.adr.it/fiumicino'),
+(46, 'Amsterdam', 'info@schiphol.nl', '+31 20 794 0800', 'Netherlands', 'CEST', TRUE, 'AMS', 'EHAM', 52.3086, 4.7639, 'Amsterdam Airport Schiphol', 165, 1, 'North Holland', 'Europe/Amsterdam', 'Europe/Amsterdam', 'https://www.schiphol.nl/en/'),
+(15, 'Berlin', 'service@berlin-airport.de', '+49 30 6091 60910', 'Germany', 'CEST', TRUE, 'BER', 'EDDB', 52.3667, 13.5033, 'Berlin Brandenburg Airport', 37, 3, 'Brandenburg', 'Europe/Berlin', 'Europe/Berlin', 'https://www.berlin-airport.de/en/'),
+(27, 'Dublin', 'info@daa.ie', '+353 1 814 1111', 'Ireland', 'IST', TRUE, 'DUB', 'EIDW', 53.4213, -6.2701, 'Dublin Airport', 47, 2, 'Leinster', 'Europe/Dublin', 'Europe/Dublin', 'https://www.dublinairport.com/'),
+(10, 'Lisbon', 'lisbon.airport@ana.pt', '+351 21 841 3700', 'Portugal', 'WEST', TRUE, 'LIS', 'LPPT', 38.7742, -9.1342, 'Lisbon Airport', 50, 2, 'Lisbon', 'Europe/Lisbon', 'Europe/Lisbon', 'https://www.aeroportolisboa.pt/en/lis/home'),
+(12, 'Vienna', 'info@viennaairport.com', '+43 1 70070', 'Austria', 'CEST', TRUE, 'VIE', 'LOWW', 48.1100, 16.5697, 'Vienna International Airport', 77, 4, 'Lower Austria', 'Europe/Vienna', 'Europe/Vienna', 'https://www.viennaairport.com/'),
+(8, 'Zurich', 'info@zurich-airport.com', '+41 43 816 22 11', 'Switzerland', 'CEST', TRUE, 'ZRH', 'LSZH', 47.4503, 8.5622, 'Zurich Airport', 67, 3, 'Zurich', 'Europe/Zurich', 'Europe/Zurich', 'https://www.flughafen-zuerich.ch/en/'),
+(5, 'Copenhagen', 'cph@cph.dk', '+45 32 31 32 31', 'Denmark', 'CEST', TRUE, 'CPH', 'EKCH', 55.6181, 12.6563, 'Copenhagen Airport', 60, 3, 'Capital Region of Denmark', 'Europe/Copenhagen', 'Europe/Copenhagen', 'https://www.cph.dk/'),
+(17, 'Stockholm', 'info@swedavia.se', '+46 10 109 00 00', 'Sweden', 'CEST', TRUE, 'ARN', 'ESSA', 59.6519, 17.9186, 'Stockholm Arlanda Airport', 67, 4, 'Stockholm County', 'Europe/Stockholm', 'Europe/Stockholm', 'https://www.swedavia.com/arlanda/'),
+(6, 'Oslo', 'osl.info@avinor.no', '+47 67 03 00 00', 'Norway', 'CEST', TRUE, 'OSL', 'ENGM', 60.1939, 11.1003, 'Oslo Airport, Gardermoen', 52, 1, 'Akershus', 'Europe/Oslo', 'Europe/Oslo', 'https://avinor.no/en/airport/oslo-airport/'),
+(14, 'Helsinki', 'info@finavia.fi', '+358 20 708000', 'Finland', 'EEST', TRUE, 'HEL', 'EFHK', 60.3172, 24.9633, 'Helsinki Airport', 34, 2, 'Uusimaa', 'Europe/Helsinki', 'Europe/Helsinki', 'https://www.finavia.fi/en/airports/helsinki-airport'),
+(3, 'Brussels', 'info@brusselsairport.be', '+32 2 753 77 53', 'Belgium', 'CEST', TRUE, 'BRU', 'EBBR', 50.9014, 4.4847, 'Brussels Airport', 54, 1, 'Flanders', 'Europe/Brussels', 'Europe/Brussels', 'https://www.brusselsairport.be/en'),
+(19, 'Athens', 'aia@aia.gr', '+30 210 3530000', 'Greece', 'EEST', TRUE, 'ATH', 'LGAV', 37.9364, 23.9445, 'Athens International Airport Eleftherios Venizelos', 93, 2, 'Attica', 'Europe/Athens', 'Europe/Athens', 'https://www.aia.gr/en/traveler/'),
+(6, 'Istanbul', 'info@igairport.com', '+90 444 1 442', 'Turkey', 'TRT', TRUE, 'IST', 'LTFM', 41.2750, 28.7528, 'Istanbul Airport', 286, 1, 'Istanbul', 'Europe/Istanbul', 'Europe/Istanbul', 'https://www.istairport.com/en'),
+(21, 'Moscow', 'callcenter@svo.aero', '+7 495 578-65-65', 'Russia', 'MSK', TRUE, 'SVO', 'UUEE', 55.9726, 37.4146, 'Sheremetyevo International Airport', 6, 6, 'Moscow Oblast', 'Europe/Moscow', 'Europe/Moscow', 'https://www.svo.aero/en/'),
+(198, 'New York City', 'panynjpressoffice@panynj.gov', '+1 212 435-7777', 'United States', 'EDT', TRUE, 'JFK', 'KJFK', 40.6413, -73.7781, 'John F. Kennedy International Airport', 128, 6, 'New York', 'America/New_York', 'America/New_York', 'https://www.jfkairport.com/'),
+(8, 'Los Angeles', 'laxpd@lawa.org', '+1 310-646-5252', 'United States', 'PDT', TRUE, 'LAX', 'KLAX', 33.9425, -118.4081, 'Los Angeles International Airport', 146, 9, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.flylax.com/'),
+(9, 'Chicago', 'aviation@cityofchicago.org', '+1 773-686-2200', 'United States', 'CDT', TRUE, 'ORD', 'KORD', 41.9786, -87.9048, 'O\'Hare International Airport', 191, 4, 'Illinois', 'America/Chicago', 'America/Chicago', 'https://www.flychicago.com/ohare/home.html'),
+(10, 'Atlanta', 'airport.comment@atl.com', '+1 404-530-7300', 'United States', 'EDT', TRUE, 'ATL', 'KATL', 33.6397, -84.4281, 'Hartsfield–Jackson Atlanta International Airport', 207, 2, 'Georgia', 'America/New_York', 'America/New_York', 'https://www.atl.com/'),
+(30, 'Dallas', 'asktheairport@dfwairport.com', '+1 972-973-3112', 'United States', 'CDT', TRUE, 'DFW', 'KDFW', 32.8968, -97.0380, 'Dallas/Fort Worth International Airport', 165, 5, 'Texas', 'America/Chicago', 'America/Chicago', 'https://www.dfwairport.com/'),
+(4, 'Denver', 'denairport@flydenver.com', '+1 303-342-2000', 'United States', 'MDT', TRUE, 'DEN', 'KDEN', 39.8617, -104.6731, 'Denver International Airport', 145, 1, 'Colorado', 'America/Denver', 'America/Denver', 'https://www.flydenver.com/'),
+(7, 'Fort Lauderdale', NULL, '+1 954-359-1200', 'United States', 'EDT', TRUE, 'FLL', 'KFLL', 26.0725, -80.1528, 'Fort Lauderdale–Hollywood International Airport', 128, 4, 'Florida', 'America/New_York', 'America/New_York', 'https://www.broward.org/Airport/'),
+(9, 'Orlando', '[dirección de correo electrónico eliminada]', '+1 407-825-2001', 'United States', 'EDT', TRUE, 'MCO', 'KMCO', 28.4294, -81.3090, 'Orlando International Airport', 129, 3, 'Florida', 'America/New_York', 'America/New_York', 'https://orlandoairports.net/'),
+(3, 'Miami', '[dirección de correo electrónico eliminada]', '+1 305-876-7000', 'United States', 'EDT', TRUE, 'MIA', 'KMIA', 25.7933, -80.2906, 'Miami International Airport', 131, 1, 'Florida', 'America/New_York', 'America/New_York', 'https://www.miami-airport.com/'),
+(10, 'Tampa', '[dirección de correo electrónico eliminada]', '+1 813-870-8700', 'United States', 'EDT', FALSE, 'TPA', 'KTPA', 27.9755, -82.5332, 'Tampa International Airport', 62, 1, 'Florida', 'America/New_York', 'America/New_York', 'https://www.tampaairport.com/'),
+(15, 'San Francisco', '[dirección de correo electrónico eliminada]', '+1 650-821-8211', 'United States', 'PDT', TRUE, 'SFO', 'KSFO', 37.6189, -122.3750, 'San Francisco International Airport', 115, 4, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.flysfo.com/'),
+(4, 'Seattle', '[dirección de correo electrónico eliminada]', '+1 206-787-5388', 'United States', 'PDT', TRUE, 'SEA', 'KSEA', 47.4502, -122.3088, 'Seattle–Tacoma International Airport', 105, 1, 'Washington', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.portseattle.org/sea-tac'),
+(10, 'Phoenix', '[dirección de correo electrónico eliminada]', '+1 602-273-3300', 'United States', 'MST', TRUE, 'PHX', 'KPHX', 33.4342, -112.0117, 'Phoenix Sky Harbor International Airport', 120, 2, 'Arizona', 'America/Phoenix', 'America/Phoenix', 'https://www.skyharbor.com/'),
+(6, 'San Diego', '[dirección de correo electrónico eliminada]', '+1 619-400-2400', 'United States', 'PDT', TRUE, 'SAN', 'KSAN', 32.7336, -117.1900, 'San Diego International Airport', 51, 2, 'California', 'America/Los_Angeles', 'America/Los_Angeles', 'https://www.san.org/'),
+(17, 'Philadelphia', '[dirección de correo electrónico eliminada]', '+1 215-937-6937', 'United States', 'EDT', TRUE, 'PHL', 'KPHL', 39.8720, -75.2400, 'Philadelphia International Airport', 125, 7, 'Pennsylvania', 'America/New_York', 'America/New_York', 'https://www.phl.org/'),
+(10, 'Houston', '[dirección de correo electrónico eliminada]', '+1 281-230-3100', 'United States', 'CDT', TRUE, 'IAH', 'KIAH', 29.9844, -95.3414, 'George Bush Intercontinental Airport', 162, 5, 'Texas', 'America/Chicago', 'America/Chicago', 'https://www.fly2houston.com/iah'),
+(5, 'Boston', '[dirección de correo electrónico eliminada]', '+1 617-561-1800', 'United States', 'EDT', TRUE, 'BOS', 'KBOS', 42.3643, -71.0052, 'Boston Logan International Airport', 102, 4, 'Massachusetts', 'America/New_York', 'America/New_York', 'https://www.massport.com/logan-airport/'),
+(16, 'Minneapolis', '[dirección de correo electrónico eliminada]', '+1 612-726-5555', 'United States', 'CDT', TRUE, 'MSP', 'KMSP', 44.8819, -93.2217, 'Minneapolis–Saint Paul International Airport', 130, 2, 'Minnesota', 'America/Chicago', 'America/Chicago', 'https://www.mspairport.com/'),
+(26, 'Detroit', '[dirección de correo electrónico eliminada]', '+1 734-247-7678', 'United States', 'EDT', TRUE, 'DTW', 'KDTW', 42.2125, -83.3534, 'Detroit Metropolitan Airport', 129, 2, 'Michigan', 'America/Detroit', 'America/Detroit', 'https://www.metroairport.com/'),
+(19, 'Toronto', '[dirección de correo electrónico eliminada]', '+1 416-776-3000', 'Canada', 'EDT', TRUE, 'YYZ', 'CYYZ', 43.6777, -79.6248, 'Toronto Pearson International Airport', 187, 2, 'Ontario', 'America/Toronto', 'America/Toronto', 'https://www.torontopearson.com/'),
+(16, 'Montreal', '[dirección de correo electrónico eliminada]', '+1 514-394-7377', 'Canada', 'EDT', TRUE, 'YUL', 'CYUL', 45.4706, -73.6397, 'Montréal–Trudeau International Airport', 66, 1, 'Quebec', 'America/Montreal', 'America/Montreal', 'https://www.admtl.com/en'),
+(7, 'Vancouver', '[dirección de correo electrónico eliminada]', '+1 604-207-7077', 'Canada', 'PDT', TRUE, 'YVR', 'CYVR', 49.1939, -123.1831, 'Vancouver International Airport', 94, 3, 'British Columbia', 'America/Vancouver', 'America/Vancouver', 'https://www.yvr.ca/'),
+(3, 'Calgary', '[dirección de correo electrónico eliminada]', '+1 403-735-1200', 'Canada', 'MDT', TRUE, 'YYC', 'CYYC', 51.1238, -114.0117, 'Calgary International Airport', 63, 2, 'Alberta', 'America/Edmonton', 'America/Edmonton', 'https://www.yyc.com/'),
+(1, 'Mexico City', '[dirección de correo electrónico eliminada]', '+52 55 2482 2424', 'Mexico', 'CST', TRUE, 'MEX', 'MMMX', 1222, 20.1339, -99.0719, 'Mexico City International Airport', 45, 2, 'Mexico City', 'America/Mexico_City', 'America/Mexico_City', 'https://www.aicm.com.mx/'),
+(15, 'Cancun', '[dirección de correo electrónico eliminada]', '+52 998 848 7200', 'Mexico', 'EST', TRUE, 'CUN', 'MMUN', 21.0354, -86.8747, 'Cancún International Airport', 69, 4, 'Quintana Roo', 'America/Cancun', 'America/Cancun', 'https://www.cancunairport.com/'),
+(2240, 'Bogotá', '[dirección de correo electrónico eliminada]', '+57 1 2662000', 'Colombia', NULL, TRUE, 'BOG', 'SKBO', 4.7016, -74.1447, 'El Dorado International Airport', 44, 2, 'Bogotá', 'America/Bogota', 'America/Bogota', 'https://eldorado.aero/en/'),
+(6, 'Rio de Janeiro', '[dirección de correo electrónico eliminada]', '+55 21 3004-6000', 'Brazil', '-03', TRUE, 'GIG', 'SBGL', -22.8129, -43.2519, 'Rio de Janeiro/Galeão – Antonio Carlos Jobim International Airport', 34, 2, 'Rio de Janeiro', 'America/Sao_Paulo', 'America/Sao_Paulo', 'https://riogaleao.com/en/'),
+(780, 'São Paulo', '[dirección de correo electrónico eliminada]', '+55 11 2445-2945', 'Brazil', '-03', TRUE, 'GRU', 'SBGR', -23.4356, -46.4731, 'São Paulo–Guarulhos International Airport', 45, 3, 'São Paulo', 'America/Sao_Paulo', 'America/Sao_Paulo', 'https://www.gru.com.br/en/'),
+(153, 'Buenos Aires', '[dirección de correo electrónico eliminada]', '+54 11 5480-6111', 'Argentina', NULL, TRUE, 'EZE', 'SAEZ', -34.8222, -58.5358, 'Ministro Pistarini International Airport', 33, 3, 'Buenos Aires Province', 'America/Argentina/Buenos_Aires', 'America/Argentina/Buenos_Aires', 'https://www.aa2000.com.ar/'),
+(52, 'Santiago', '[dirección de correo electrónico eliminada]', '+56 2 2690 1700', 'Chile', NULL, TRUE, 'SCL', 'SCEL', -33.3983, -70.7842, 'Arturo Merino Benítez International Airport', 38, 2, 'Santiago Metropolitan Region', 'America/Santiago', 'America/Santiago', 'https://www.nuevopudahuel.cl/'),
+(6, 'Sydney', '[dirección de correo electrónico eliminada]', '+61 2 9667 9111', 'Australia', 'AEST', TRUE, 'SYD', 'YSSY', -33.9500, 151.1772, 'Sydney Airport', 69, 3, 'New South Wales', 'Australia/Sydney', 'Australia/Sydney', 'https://www.sydneyairport.com.au/'),
+(4, 'Melbourne', '[dirección de correo electrónico eliminada]', '+61 3 9297 1600', 'Australia', 'AEST', TRUE, 'MEL', 'YMML', -37.6733, 144.8433, 'Melbourne Airport', 68, 4, 'Victoria', 'Australia/Melbourne', 'Australia/Melbourne', 'https://www.melbourneairport.com.au/'),
+(8, 'Brisbane', '[dirección de correo electrónico eliminada]', '+61 7 3406 3000', 'Australia', 'AEST', TRUE, 'BNE', 'YBBN', -27.3842, 153.1172, 'Brisbane Airport', 64, 2, 'Queensland', 'Australia/Brisbane', 'Australia/Brisbane', 'https://www.bne.com.au/'),
+(3, 'Perth', '[dirección de correo electrónico eliminada]', '+61 8 9478 8888', 'Australia', 'AWST', TRUE, 'PER', 'YPPH', -31.9403, 115.9667, 'Perth Airport', 52, 4, 'Western Australia', 'Australia/Perth', 'Australia/Perth', 'https://www.perthairport.com.au/'),
+(9, 'Auckland', '[dirección de correo electrónico eliminada]', '+64 9 275 0789', 'New Zealand', 'NZST', TRUE, 'AKL', 'NZAA', -37.0081, 174.7922, 'Auckland Airport', 33, 1, 'Auckland', 'Pacific/Auckland', 'Pacific/Auckland', 'https://www.aucklandairport.co.nz/'),
+(7, 'Dubai', '[dirección de correo electrónico eliminada]', '+971 4 224 5555', 'United Arab Emirates', NULL, TRUE, 'DXB', 'OMDB', 25.2528, 55.3644, 'Dubai International Airport', 229, 3, 'Dubai', 'Asia/Dubai', 'Asia/Dubai', 'https://www.dubaiairports.ae/'),
+(16, 'Doha', '[dirección de correo electrónico eliminada]', '+974 4010 6666', 'Qatar', NULL, TRUE, 'DOH', 'OTHH', 25.2744, 51.6083, 'Hamad International Airport', NULL, 1, 'Doha', 'Asia/Qatar', 'Asia/Qatar', 'https://dohahamadairport.com/'),
+(13, 'Singapore', '[dirección de correo electrónico eliminada]', '+65 6595 6868', 'Singapore', NULL, TRUE, 'SIN', 'WSSS', 1.3521, 103.9911, 'Singapore Changi Airport', 184, 4, 'Changi', 'Asia/Singapore', 'Asia/Singapore', 'https://www.changiairport.com/'),
+(6, 'Hong Kong', '[dirección de correo electrónico eliminada]', '+852 2180 8888', 'Hong Kong', 'HKT', TRUE, 'HKG', 'VHHH', 22.3089, 113.9153, 'Hong Kong International Airport', 182, 2, 'Chek Lap Kok', 'Asia/Hong_Kong', 'Asia/Hong_Kong', 'https://www.hongkongairport.com/'),
+(41, 'Tokyo', '[dirección de correo electrónico eliminada]', '+81 476-34-8000', 'Japan', 'JST', TRUE, 'NRT', 'RJAA', 35.7647, 140.3864, 'Narita International Airport', 122, 3, 'Chiba', 'Asia/Tokyo', 'Asia/Tokyo', 'https://www.narita-airport.jp/en/'),
+(72, 'Seoul', '[dirección de correo electrónico eliminada]', '+82 1577-2600', 'South Korea', 'KST', TRUE, 'ICN', 'RKSI', 37.4692, 126.4500, 'Incheon International Airport', 128, 2, 'Incheon', 'Asia/Seoul', 'Asia/Seoul', 'https://www.airport.kr/'),
+(6, 'Shanghai', '[dirección de correo electrónico eliminada]', '+86 21 96990', 'China', 'CST', TRUE, 'PVG', 'ZSPD', 31.1433, 121.8053, 'Shanghai Pudong International Airport', 282, 2, 'Shanghai', 'Asia/Shanghai', 'Asia/Shanghai', 'http://en.shairport.com/'), [42102-232]
+2025-04-10 10:28:27.243169+02:00 jdbc[35]: null
+org.h2.message.DbException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-232]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:217)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:134)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:724)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:703)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2025-04-10 11:13:02.286261+02:00 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "AIRPORTS" no encontrada
+Table "AIRPORTS" not found; SQL statement:
+INSERT INTO airports (ID, ALTITUDE, CITY, CONTACT_EMAIL, CONTACT_PHONE, COUNTRY, DST, HAS_INTERNATIONAL_FLIGHTS, IATA_CODE, ICAO_CODE, LATITUDE, LONGITUDE, NAME, NUMBER_OF_GATES, NUMBER_OF_TERMINALS, REGION, TIMEZONE, TZ_DATABASE_TIME_ZONE, WEBSITE) VALUES
+(1, 13, 'New York', 'info@jfkairport.com', '+1 718-244-4444', 'United States', 'A', 1, 'JFK', 'KJFK', 40.6413, -73.7781, 'John F. Kennedy International Airport', 128, 6, 'North America', 'America/New_York', 'America/New_York', 'https://www.jfkairport.com'),
+(2, 116, 'London', 'contact@heathrow.com', '+44 20 8759 4321', 'United Kingdom', 'E', 1, 'LHR', 'EGLL', 51.4700, -0.4543, 'Heathrow Airport', 185, 5, 'Europe', 'Europe/London', 'Europe/London', 'https://www.heathrow.com'),
+(3, 35, 'Tokyo', 'customer-support@haneda-airport.jp', '+81 3-5757-8111', 'Japan', 'J', 1, 'HND', 'RJTT', 35.5494, 139.7798, 'Haneda Airport', 85, 3, 'Asia', 'Asia/Tokyo', 'Asia/Tokyo', 'https://www.haneda-airport.jp'),
+(4, 234, 'Dubai', 'feedback@dubaiairports.ae', '+971 4 224 5555', 'United Arab Emirates', 'U', 1, 'DXB', 'OMDB', 25.2532, 55.3657, 'Dubai International Airport', 200, 3, 'Middle East', 'Asia/Dubai', 'Asia/Dubai', 'https://www.dubaiairports.ae'),
+(5, 308, 'Denver', 'customerservice@flydenver.com', '+1 303-342-2000', 'United States', 'A', 1, 'DEN', 'KDEN', 39.8561, -104.6737, 'Denver International Airport', 146, 1, 'North America', 'America/Denver', 'America/Denver', 'https://www.flydenver.com'),
+(6, 8, 'Sydney', 'feedback@sydneyairport.com.au', '+61 2 9667 9111', 'Australia', 'O', 1, 'SYD', 'YSSY', -33.9461, 151.1772, 'Sydney Kingsford Smith Airport', 45, 3, 'Oceania', 'Australia/Sydney', 'Australia/Sydney', 'https://www.sydneyairport.com.au'),
+(7, 791, 'Mexico City', 'contacto@aicm.com.mx', '+52 55 2482 2400', 'Mexico', 'M', 1, 'MEX', 'MMMX', 19.4363, -99.0721, 'Benito Juárez International Airport', 72, 2, 'North America', 'America/Mexico_City', 'America/Mexico_City', 'https://www.aicm.com.mx'),
+(8, 102, 'Paris', 'contact@parisaeroport.fr', '+33 1 70 36 39 50', 'France', 'E', 1, 'CDG', 'LFPG', 49.0097, 2.5479, 'Charles de Gaulle Airport', 210, 3, 'Europe', 'Europe/Paris', 'Europe/Paris', 'https://www.parisaeroport.fr'),
+(9, 4, 'Singapore', 'feedback@changiairport.com', '+65 6595 6868', 'Singapore', 'S', 1, 'SIN', 'WSSS', 1.3644, 103.9915, 'Changi Airport', 100, 4, 'Asia', 'Asia/Singapore', 'Asia/Singapore', 'https://www.changiairport.com'),
+(10, 128, 'Toronto', 'customer.service@torontopearson.com', '+1 416-776-3000', 'Canada', 'A', 1, 'YYZ', 'CYYZ', 43.6777, -79.6248, 'Toronto Pearson International Airport', 98, 2, 'North America', 'America/Toronto', 'America/Toronto', 'https://www.torontopearson.com'),
+(11, 42, 'Frankfurt', 'info@fraport.de', '+49 69 6900', 'Germany', 'E', 1, 'FRA', 'EDDF', 50.0333, 8.5706, 'Frankfurt Airport', 140, 2, 'Europe', 'Europe/Berlin', 'Europe/Berlin', 'https://www.frankfurt-airport.com'),
+(12, 2, 'Hong Kong', 'customer@hkairport.com', '+852 2181 8888', 'Hong Kong', 'H', 1, 'HKG', 'VHHH', 22.3080, 113.9185, 'Hong Kong International Airport', 80, 2, 'Asia', 'Asia/Hong_Kong', 'Asia/Hong_Kong', 'https://www.hongkongairport.com'),
+(13, 808, 'Johannesburg', 'customercare@airports.co.za', '+27 11 921 6262', 'South Africa', 'S', 1, 'JNB', 'FAOR', -26.1392, 28.2460, 'O.R. Tambo International Airport', 60, 2, 'Africa', 'Africa/Johannesburg', 'Africa/Johannesburg', 'https://www.airports.co.za'),
+(14, 12, 'Amsterdam', 'info@schiphol.nl', '+31 20 794 0800', 'Netherlands', 'E', 1, 'AMS', 'EHAM', 52.3081, 4.7642, 'Amsterdam Airport Schiphol', 110, 1, 'Europe', 'Europe/Amsterdam', 'Europe/Amsterdam', 'https://www.schiphol.nl'),
+(15, 5, 'Seoul', 'callcenter@airport.kr', '+82 2 2660 2114', 'South Korea', 'K', 1, 'ICN', 'RKSI', 37.4692, 126.4505, 'Incheon International Airport', 120, 2, 'Asia', 'Asia/Seoul', 'Asia/Seoul', 'https://www.airport.kr') [42102-232]
+2025-04-10 11:28:30.150274+02:00 jdbc[63]: null
+org.h2.message.DbException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-232]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:217)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:134)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:724)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:703)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2025-04-10 13:17:15.719650+02:00 jdbc[97]: java.lang.Exception: Open Stack Trace
+	at org.h2.util.CloseWatcher.register(CloseWatcher.java:85)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:291)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1038)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+org.h2.message.DbException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-232]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:217)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:134)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.AirportApp.AirportApplication.main(AirportApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 56 more
+2025-04-10 13:20:00.190592+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "P1_0.PLANE_ID" no encontrada
+Column "P1_0.PLANE_ID" not found; SQL statement:
+select p1_0.plane_id,p1_0.cruising_speed,p1_0.manufacturer,p1_0.max_range,p1_0.model,p1_0.passenger_capacity,p1_0.registration_number from plane p1_0 [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1228)
+	at org.h2.command.query.Query.prepare(Query.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:687)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:342)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$4.doPrepare(StatementPreparerImpl.java:151)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:180)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:153)
+	at org.hibernate.sql.exec.internal.StandardStatementCreator.createStatement(StandardStatementCreator.java:49)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:235)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:171)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.<init>(JdbcValuesResultSetImpl.java:74)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:355)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:137)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:91)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:165)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:152)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:442)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:362)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:380)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:143)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:395)
+	at jdk.internal.reflect.GeneratedMethodAccessor52.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:731)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy7/jdk.proxy7.$Proxy184.findAll(Unknown Source)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl.findAll(PlaneServiceImpl.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl$$SpringCGLIB$$0.findAll(<generated>)
+	at com.example.AirportApp.controllers.PlaneController.getAllPlanes(PlaneController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-04-10 13:20:00.356795+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "P1_0.PLANE_ID" no encontrada
+Column "P1_0.PLANE_ID" not found; SQL statement:
+select p1_0.plane_id,p1_0.cruising_speed,p1_0.manufacturer,p1_0.max_range,p1_0.model,p1_0.passenger_capacity,p1_0.registration_number from plane p1_0 [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1228)
+	at org.h2.command.query.Query.prepare(Query.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:687)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:342)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$4.doPrepare(StatementPreparerImpl.java:151)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:180)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:153)
+	at org.hibernate.sql.exec.internal.StandardStatementCreator.createStatement(StandardStatementCreator.java:49)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:235)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:171)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.<init>(JdbcValuesResultSetImpl.java:74)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:355)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:137)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:91)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:165)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:152)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:442)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:362)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:380)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:143)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:395)
+	at jdk.internal.reflect.GeneratedMethodAccessor52.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:731)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy7/jdk.proxy7.$Proxy184.findAll(Unknown Source)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl.findAll(PlaneServiceImpl.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl$$SpringCGLIB$$0.findAll(<generated>)
+	at com.example.AirportApp.controllers.PlaneController.getAllPlanes(PlaneController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-04-10 13:21:46.701586+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "P1_0.PLANE_ID" no encontrada
+Column "P1_0.PLANE_ID" not found; SQL statement:
+select p1_0.plane_id,p1_0.cruising_speed,p1_0.manufacturer,p1_0.max_range,p1_0.model,p1_0.passenger_capacity,p1_0.registration_number from plane p1_0 [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1228)
+	at org.h2.command.query.Query.prepare(Query.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:687)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:342)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$4.doPrepare(StatementPreparerImpl.java:151)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:180)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:153)
+	at org.hibernate.sql.exec.internal.StandardStatementCreator.createStatement(StandardStatementCreator.java:49)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:235)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:171)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.<init>(JdbcValuesResultSetImpl.java:74)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:355)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:137)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:91)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:165)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:152)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:442)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:362)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:380)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:143)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:395)
+	at jdk.internal.reflect.GeneratedMethodAccessor52.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:731)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy7/jdk.proxy7.$Proxy184.findAll(Unknown Source)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl.findAll(PlaneServiceImpl.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl$$SpringCGLIB$$0.findAll(<generated>)
+	at com.example.AirportApp.controllers.PlaneController.getAllPlanes(PlaneController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-04-10 13:21:46.788231+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "P1_0.PLANE_ID" no encontrada
+Column "P1_0.PLANE_ID" not found; SQL statement:
+select p1_0.plane_id,p1_0.cruising_speed,p1_0.manufacturer,p1_0.max_range,p1_0.model,p1_0.passenger_capacity,p1_0.registration_number from plane p1_0 [42122-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1228)
+	at org.h2.command.query.Query.prepare(Query.java:232)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:687)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:342)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$4.doPrepare(StatementPreparerImpl.java:151)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:180)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:153)
+	at org.hibernate.sql.exec.internal.StandardStatementCreator.createStatement(StandardStatementCreator.java:49)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:235)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:171)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.<init>(JdbcValuesResultSetImpl.java:74)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:355)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:137)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:102)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:91)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:165)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:152)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:442)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:362)
+	at org.hibernate.query.sqm.internal.QuerySqmImpl.doList(QuerySqmImpl.java:380)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:143)
+	at org.hibernate.query.Query.getResultList(Query.java:120)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll(SimpleJpaRepository.java:395)
+	at jdk.internal.reflect.GeneratedMethodAccessor52.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:731)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy7/jdk.proxy7.$Proxy184.findAll(Unknown Source)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl.findAll(PlaneServiceImpl.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:727)
+	at com.example.AirportApp.service.impl.PlaneServiceImpl$$SpringCGLIB$$0.findAll(<generated>)
+	at com.example.AirportApp.controllers.PlaneController.getAllPlanes(PlaneController.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)

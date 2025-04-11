@@ -89,4 +89,23 @@ public class AirportServiceImpl implements AirportService {
         }
         airportRepository.deleteById(id);
     }
+
+    @Override
+    @Transactional
+    public List<Airport> saveAll(List<Airport> airports) {
+        if (airports == null || airports.isEmpty()) {
+            throw new AirportAppException("La lista de aeropuertos no puede ser nula o vacía");
+        }
+        return airportRepository.saveAll(airports);
+    }
+
+    @Override
+    @Transactional
+    public List<Airport> updateAll(List<Airport> airports) {
+        if (airports == null || airports.isEmpty()) {
+            throw new AirportAppException("La lista de aeropuertos no puede ser nula o vacía");
+        }
+        // Aquí puedes agregar lógica adicional si es necesario
+        return airportRepository.saveAll(airports); // `saveAll` también actualiza si los IDs existen
+    }
 }

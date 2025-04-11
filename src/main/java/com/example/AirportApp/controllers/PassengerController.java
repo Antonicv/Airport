@@ -42,9 +42,19 @@ public class PassengerController {
         return ResponseEntity.ok(passengerService.save(passenger));
     }
 
+    @PostMapping("/batch")
+    public ResponseEntity<List<Passenger>> createPassengersBatch(@RequestBody List<Passenger> passengers) {
+        return ResponseEntity.ok(passengerService.saveAll(passengers));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Passenger> updatePassenger(@PathVariable Long id, @RequestBody Passenger passengerDetails) {
         return ResponseEntity.ok(passengerService.update(id, passengerDetails));
+    }
+
+    @PutMapping("/batch")
+    public ResponseEntity<List<Passenger>> updatePassengersBatch(@RequestBody List<Passenger> passengers) {
+        return ResponseEntity.ok(passengerService.updateAll(passengers));
     }
 
     @DeleteMapping("/{id}")

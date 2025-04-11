@@ -13,4 +13,6 @@ public interface PassengerService {
     Passenger save(Passenger passenger);
     Passenger update(Long id, Passenger passengerDetails);
     void deleteById(Long id);
+    List<Passenger> saveAll(List<Passenger> passengers);
+    List<Passenger> updateAll(List<Passenger> passengers);
 }
